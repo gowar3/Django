@@ -9,7 +9,9 @@ def index(request):
     })
 
 def search(request):
-    result = util.get_entry(request)
+
+    search_term = request.GET.get("q", "")
+    result = util.get_entry(search_term)
 
 ## Check why it does not return the result if found
 
