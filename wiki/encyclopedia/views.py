@@ -8,3 +8,7 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def search(request):
+    return redner(request, "encyclopedia/search.html", {
+        "
+    })
