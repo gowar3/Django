@@ -10,5 +10,5 @@ def index(request):
 
 def search(request):
     return render(request, "encyclopedia/search.html", {
-        "result": util.get_entry()
+        "result": util.get_entry(result)
     })
