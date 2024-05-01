@@ -10,8 +10,7 @@ def index(request):
 
 def search(request):
     result = util.get_entry(request)
-    
-    if request in entries:
-        return render(request, "encyclopedia/search.html", {
-            "result": util.get_entry(request)
+
+    return render(request, "encyclopedia/search.html", {
+        "result": result
     })
