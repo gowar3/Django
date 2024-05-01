@@ -9,6 +9,6 @@ def index(request):
     })
 
 def search(request):
-    return redner(request, "encyclopedia/search.html", {
+    return render(request, "encyclopedia/search.html", {
         "result": util.get_entry()
     })
