@@ -8,6 +8,11 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def entry(request):
+    return render(request, "encyclopedia/search.html", {
+        "result": request
+    })
+
 def search(request):
 
     search_term = request.GET.get("q", "")
