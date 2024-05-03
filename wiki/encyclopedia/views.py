@@ -8,9 +8,9 @@ def index(request):
         "entries": util.list_entries()
     })
 
-def entry(request):
+def entry(request, entry):
     return render(request, "encyclopedia/search.html", {
-        "result": request
+        "result": entry
     })
 
 def search(request):
