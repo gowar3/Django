@@ -13,7 +13,7 @@ def entry(request, entry):
     title = util.get_entry(entry)
 
     if title is None:
-        return render(request, "encyclopedia/error.html)
+        return render(request, "encyclopedia/error.html")
 
     return render(request, "encyclopedia/search.html", {
         "result": title
