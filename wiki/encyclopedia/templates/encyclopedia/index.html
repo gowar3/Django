@@ -9,7 +9,7 @@
 
     <ul>
         {% for entry in entries %}
-            <li href="{% url 'search' %}">{{ entry }}</li>
+            <li><a href="{% url 'search' %}">{{ entry }}</a></li>
         {% endfor %}
     </ul>
 
