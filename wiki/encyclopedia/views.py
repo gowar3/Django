@@ -22,8 +22,11 @@ def entry(request, entry):
 
 def search(request):
 
-    search_term = request.GET.get("q", "")
-    result = util.get_entry(search_term)
+    if request:
+        search_term = request.GET.get("q", "")
+        result = util.get_entry(search_term)
+    else:
+        search_term = None
 
 
     return render(request, "encyclopedia/entry.html", {
