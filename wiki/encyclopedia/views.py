@@ -18,7 +18,7 @@ def entry(request, entry):
         title = markdown2.markdown(page)
 
     else:
-        
+
         return render(request, "encyclopedia/error.html")
 
     return render(request, "encyclopedia/entry.html", {
@@ -31,6 +31,7 @@ def search(request):
     search_term = request.GET.get("q", "")
     result = util.get_entry(search_term)
 
+#check how to get the result with substring for search
     if not result:
         search_term = ""
 
