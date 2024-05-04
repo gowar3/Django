@@ -17,7 +17,8 @@ def entry(request, entry):
 
         title = markdown2.markdown(page)
 
-    if not title:
+    else:
+        
         return render(request, "encyclopedia/error.html")
 
     return render(request, "encyclopedia/entry.html", {
