@@ -15,7 +15,7 @@ def entry(request, entry):
     if title is None:
         return render(request, "encyclopedia/error.html")
 
-    return render(request, "encyclopedia/search.html", {
+    return render(request, "encyclopedia/entry.html", {
         "result": title
     })
 
@@ -25,6 +25,6 @@ def search(request):
     result = util.get_entry(search_term)
 
 
-    return render(request, "encyclopedia/search.html", {
+    return render(request, "encyclopedia/entry.html", {
         "result": result
     })
