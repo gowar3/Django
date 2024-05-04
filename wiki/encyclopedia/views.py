@@ -27,5 +27,6 @@ def search(request):
 
 
     return render(request, "encyclopedia/entry.html", {
-        "result": result
+        "result": result,
+        "title": search_term
     })
