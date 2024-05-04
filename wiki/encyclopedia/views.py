@@ -11,9 +11,8 @@ def index(request):
 
 def entry(request, entry):
 
-    if entry:
 
-        title = markdown2.markdown(util.get_entry(entry))
+    title = markdown2.markdown(util.get_entry(entry))
 
     if not title:
         return render(request, "encyclopedia/error.html")
