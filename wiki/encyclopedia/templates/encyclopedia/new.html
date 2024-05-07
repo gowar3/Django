@@ -6,6 +6,7 @@
 
 {% block body %}
 
+    {% csrf_token %}
     <form action= "{% url 'new' %}" method= POST>
         <p><label for= "edit">New Entry</label></p>
         <label>Title</label>
