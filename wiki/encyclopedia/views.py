@@ -40,3 +40,8 @@ def search(request):
         "result": result,
         "title": search_term
     })
+
+
+def edit(request):
+
+    return render(request, "encyclopedia/edit.html")
