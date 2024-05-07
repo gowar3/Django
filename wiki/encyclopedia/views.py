@@ -49,7 +49,7 @@ def new(request):
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
-        return HttpResponseRedirect(request.POST["title"])
+        return HttpResponseRedirect(reverse(request.POST["title"]))
 
 
     return render(request, "encyclopedia/new.html")
