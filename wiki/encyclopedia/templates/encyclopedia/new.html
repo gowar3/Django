@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <form action>
+    <form action= "{% url 'new' %}" method= POST>
         <p><label for= "edit">New Entry</label></p>
         <label>Title</label>
         <input type= "text" name= "title">
