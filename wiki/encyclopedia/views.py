@@ -48,5 +48,9 @@ def new(request):
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
+        return render(request, "encyclopedia/entry.html", {
+            
+        })
+
 
     return render(request, "encyclopedia/new.html")
