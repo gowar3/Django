@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import markdown2
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 from . import util
 
@@ -47,9 +49,9 @@ def new(request):
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
-        return render(request, "encyclopedia/entry.html", {
+        return HttpResponseRedirect(reverse("encylopedia/entry.html", {
             "result": request.POST["title"]
-        })
+        }))
 
 
     return render(request, "encyclopedia/new.html")
