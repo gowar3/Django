@@ -44,7 +44,7 @@ def search(request):
 
 def new(request):
 
-    if request.method == POST:
+    if request.method == "POST":
 
         new = save_entry(title, content)
 
