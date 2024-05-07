@@ -42,6 +42,6 @@ def search(request):
     })
 
 
-def edit(request):
+def new(request):
 
-    return render(request, "encyclopedia/edit.html")
+    return render(request, "encyclopedia/new.html")
