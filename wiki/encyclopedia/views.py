@@ -49,7 +49,7 @@ def new(request):
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
-        return HttpResponseRedirect(reverse("<str:entry>"), {
+        return HttpResponseRedirect(reverse("entry"), {
             "result": request.POST["title"]
         })
 
