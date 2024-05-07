@@ -44,4 +44,7 @@ def search(request):
 
 def new(request):
 
+    if request.method == POST:
+
+
     return render(request, "encyclopedia/new.html")
