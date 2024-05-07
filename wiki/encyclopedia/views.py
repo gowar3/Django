@@ -46,7 +46,7 @@ def new(request):
 
     if request.method == "POST":
 
-        new = save_entry(title, content)
+        util.save_entry(title, content)
 
 
     return render(request, "encyclopedia/new.html")
