@@ -47,9 +47,11 @@ def new(request):
 
     if request.method == "POST":
 
+        title = request.POST["title"]
+
         util.save_entry(request.POST["title"], request.POST["content"])
 
-        return HttpResponseRedirect(reverse("entry", args= request.POST["title"]))
+        return HttpResponseRedirect(reverse("entry", args= [title]))
 
 
     return render(request, "encyclopedia/new.html")
