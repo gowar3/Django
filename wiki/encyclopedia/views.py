@@ -45,5 +45,3 @@ def search(request):
 def new(request):
 
     return render(request, "encyclopedia/new.html")
-
-
