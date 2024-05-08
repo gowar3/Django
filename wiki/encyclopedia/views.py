@@ -67,5 +67,5 @@ def rndm(request):
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
     #return render(request, "encyclopedia/entry.html", {
-    #"result": list[x]
+    #"result": util.list[x]
 #})
