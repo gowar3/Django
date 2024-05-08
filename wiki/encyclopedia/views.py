@@ -62,4 +62,4 @@ def random(request):
 
     list = util.list_entries()
 
-    x = random.randint()
+    x = random.randint(len(list) - 1)
