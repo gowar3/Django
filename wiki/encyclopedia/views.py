@@ -39,7 +39,7 @@ def search(request):
 
 
     return render(request, "encyclopedia/entry.html", {
-        "result": result,
+        "result": markdown2.markdown(result),
         "title": search_term
     })
 
