@@ -66,7 +66,7 @@ def rndm(request):
 
     page = markdown2.markdown(util.get_entry(list[x]))
 
-    return HttpResponseRedirect(reverse("entry", args= [page]))
+    return HttpResponseRedirect(reverse("entry", args= list[x]))
 
     #return render(request, "encyclopedia/entry.html", {
     #"result": markdown2.markdown(util.get_entry(list[x]))
