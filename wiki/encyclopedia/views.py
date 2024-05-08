@@ -62,6 +62,6 @@ def random(request):
 
     list = util.list_entries()
 
-    x = random.randint(0, len(list))
+    x = random.randint(0, len(list) - 1)
 
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
