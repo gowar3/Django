@@ -65,8 +65,9 @@ def rndm(request):
     x = random.randint(0, len(list) - 1)
 
 
-    #return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
     return render(request, "encyclopedia/entry.html", {
     "result": markdown2.markdown(util.get_entry(list[x]))
 })
+
+    #return HttpResponseRedirect(reverse("entry", args= [list[x]]))
