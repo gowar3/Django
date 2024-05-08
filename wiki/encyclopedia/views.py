@@ -30,7 +30,8 @@ def entry(request, entry):
 
 def search(request):
 
-    search_term = request.GET.get("q", "").lower()
+#check how to search with cap insensitive
+    search_term = request.GET.get("q", "")
     result = util.get_entry(search_term)
 
 #check how to get the result with substring for search
