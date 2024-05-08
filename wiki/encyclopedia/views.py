@@ -34,7 +34,7 @@ def search(request):
     result = util.get_entry(search_term)
 
 #check how to get the result with substring for search
-    if not result:
+    if result == None:
         search_term = ""
 
 
