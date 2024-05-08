@@ -58,7 +58,7 @@ def new(request):
     return render(request, "encyclopedia/new.html")
 
 
-def rndm(request):
+def rndm():
 
     list = util.list_entries()
 
