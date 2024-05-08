@@ -58,15 +58,13 @@ def new(request):
     return render(request, "encyclopedia/new.html")
 
 
-def rndm(request):
+def rndm():
 
     list = util.list_entries()
 
     x = random.randint(0, len(list) - 1)
 
-    page = markdown2.markdown(util.get_entry(list[x]))
-
-    return HttpResponseRedirect(reverse("entry", args= [page]))
+    return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
     #return render(request, "encyclopedia/entry.html", {
     #"result": markdown2.markdown(util.get_entry(list[x]))
