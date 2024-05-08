@@ -2,6 +2,7 @@ from django.shortcuts import render
 import markdown2
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+import random
 
 from . import util
 
@@ -55,3 +56,10 @@ def new(request):
 
 
     return render(request, "encyclopedia/new.html")
+
+
+def random(request):
+
+    list = util.list_entries()
+
+    x = random.randint()
