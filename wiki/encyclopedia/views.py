@@ -65,5 +65,5 @@ def rndm(request):
     x = random.randint(0, len(list) - 1)
 
     return render(request, "encyclopedia/entry.html", {
-    "entry": list[x]
+    "result": list[x]
 })
