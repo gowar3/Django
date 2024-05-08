@@ -34,13 +34,13 @@ def search(request):
     result = util.get_entry(search_term)
 
 #check how to get the result with substring for search
-    if result == None:
-        search_term = ""
+    if not result:
+
+        return render(request, "encyclopedia/error.html")
 
 
     return render(request, "encyclopedia/entry.html", {
         "result": markdown2.markdown(result),
-        "title": search_term
     })
 
 
