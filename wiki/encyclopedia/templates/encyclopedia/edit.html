@@ -6,15 +6,11 @@
 
 {% block body %}
 
-    <form action= "{% url 'new' %}" method= POST>
+    <form action= "{% url 'entry' %}" method= POST>
         {% csrf_token %}
-        <p><label for= "edit">New Entry</label></p>
-        <label>Title</label>
-        <input type= "text" name= "title">
-        <br>
         <label>Content</label>
         <br>
-        <textarea id= "edit" name="content"></textarea>
+        <textarea id= "edit" name="content">{{content}}</textarea>
         <br>
         <input type= "submit" value= "Save">
     </form>
