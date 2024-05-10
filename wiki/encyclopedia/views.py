@@ -74,7 +74,7 @@ def edit(request, title):
 
     if request.method == "POST":
 
-        util.save_entry(request.POST["title"], content)
+        util.save_entry(request.POST["title"], request.POST["content"])
 
         return HttpResponseRedirect(reverse("entry", args= [title]))
 
