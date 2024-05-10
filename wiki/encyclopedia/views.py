@@ -67,3 +67,6 @@ def rndm(request):
 
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
+def edit(request):
+
+    
