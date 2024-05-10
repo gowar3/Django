@@ -60,7 +60,7 @@ def new(request):
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
-        return HttpResponseRedirect(reverse("entry", args= [title]))
+        return HttpResponseRedirect(reverse("wiki:entry", args= [title]))
 
 
     return render(request, "encyclopedia/new.html")
@@ -84,7 +84,7 @@ def rndm(request):
 
     x = random.randint(0, len(list) - 1)
 
-    return HttpResponseRedirect(reverse("entry", args= [list[x]]))
+    return HttpResponseRedirect(reverse("wiki:entry", args= [list[x]]))
 
 
 
