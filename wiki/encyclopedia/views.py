@@ -47,6 +47,10 @@ def search(request):
 
 def new(request):
 
+    list = util.list_entries()
+
+    
+
     if request.method == "POST":
 
         title = request.POST["title"]
@@ -69,4 +73,4 @@ def rndm(request):
 
 def edit(request):
 
-    
+
