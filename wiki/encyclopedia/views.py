@@ -72,6 +72,9 @@ def edit(request, title):
 
     content = util.get_entry(title)
 
+    if request.method == "POST":
+        
+
     return render(request, "encyclopedia/edit.html", {
         "content": content,
         "title": title
