@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <form action= "{% url 'entry' %}" method= POST>
+    <form action= "{% url 'new' %}" method= POST>
         {% csrf_token %}
         <label>Content</label>
         <br>

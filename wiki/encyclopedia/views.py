@@ -77,8 +77,8 @@ def edit(request, title):
 
     if entry in list:
 
-        return render(request, "encyclopedia/html", {
-            "result": entry
+        return render(request, "encyclopedia/edit.html", {
+            "content": entry
         })
 
 
