@@ -73,7 +73,10 @@ def edit(request, title):
     content = util.get_entry(title)
 
     if request.method == "POST":
-        
+
+        util.save_entry(request.POST["title"], content)
+
+        return HttpResponseRedirect(reverse("entry", args= [title]))
 
     return render(request, "encyclopedia/edit.html", {
         "content": content,
