@@ -67,9 +67,9 @@ def new(request):
 
 
 
-def edit(request, entry):
+def edit(request):
 
-    content = util.get_entry(entry)
+    content = util.get_entry(request)
 
     return render(request, "encyclopedia/edit.html", {
         "content": content,
