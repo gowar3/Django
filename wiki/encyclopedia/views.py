@@ -69,11 +69,11 @@ def rndm(request):
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
 
-def edit(request, title):
+def edit(request):
 
     list= util.list_entries()
 
-    entry = util.get_entry(title)
+    entry = util.get_entry(request)
 
     if entry in list:
 
