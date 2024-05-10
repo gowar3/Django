@@ -60,6 +60,15 @@ def new(request):
     return render(request, "encyclopedia/new.html")
 
 
+def edit(request):
+
+    entry = util.get_entry(request)
+
+    return render(request, "encyclopedia/edit.html", {
+        "content": entry
+    })
+
+
 def rndm(request):
 
     list = util.list_entries()
@@ -67,19 +76,6 @@ def rndm(request):
     x = random.randint(0, len(list) - 1)
 
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
-
-
-def edit(request):
-
-    list= util.list_entries()
-
-    entry = util.get_entry(request)
-
-    if entry in list:
-
-        return render(request, "encyclopedia/edit.html", {
-            "content": entry
-        })
 
 
 
