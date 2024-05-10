@@ -47,8 +47,6 @@ def search(request):
 
 def new(request):
 
-    list = util.list_entries()
-
 
     if request.method == "POST":
 
@@ -71,5 +69,9 @@ def rndm(request):
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
 def edit(request):
+
+    list= util.list_entries()
+
+    
 
 
