@@ -6,11 +6,11 @@
 
 {% block body %}
 
-    <form action= "{% url 'edit' %}" method= POST>
+    <form action= "{% url 'edit' title %}" method= POST>
         {% csrf_token %}
         <p><label for= "edit">New Entry</label></p>
         <label>Title</label>
-        <input type= "text" name= "entry" value= "{{ entry }}">
+        <input type= "text" name= "title" value= "{{ title }}">
         <br>
         <label>Content</label>
         <br>
