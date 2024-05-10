@@ -28,6 +28,7 @@ def entry(request, entry):
 
     return render(request, "encyclopedia/entry.html", {
         "result": title,
+        "entry": entry
     })
 
 
@@ -66,12 +67,13 @@ def new(request):
 
 
 
-def edit(request):
+def edit(request, entry):
 
-    entry = util.get_entry(request)
+    content = util.get_entry(request)
 
     return render(request, "encyclopedia/edit.html", {
-        "content": entry
+        "content": content,
+        "entry": 
     })
 
 
