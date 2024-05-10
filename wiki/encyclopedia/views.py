@@ -12,6 +12,8 @@ def index(request):
         "entries": util.list_entries()
     })
 
+
+
 def entry(request, entry):
 
     page = util.get_entry(entry)
@@ -27,6 +29,8 @@ def entry(request, entry):
     return render(request, "encyclopedia/entry.html", {
         "result": title,
     })
+
+
 
 def search(request):
 
@@ -45,6 +49,7 @@ def search(request):
     })
 
 
+
 def new(request):
 
 
@@ -60,6 +65,7 @@ def new(request):
     return render(request, "encyclopedia/new.html")
 
 
+
 def edit(request):
 
     entry = util.get_entry(request)
@@ -67,6 +73,7 @@ def edit(request):
     return render(request, "encyclopedia/edit.html", {
         "content": entry
     })
+
 
 
 def rndm(request):
