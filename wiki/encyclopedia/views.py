@@ -49,7 +49,6 @@ def new(request):
 
     list = util.list_entries()
 
-    
 
     if request.method == "POST":
 
