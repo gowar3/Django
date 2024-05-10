@@ -69,11 +69,17 @@ def rndm(request):
     return HttpResponseRedirect(reverse("entry", args= [list[x]]))
 
 
-def edit(request, entry):
+def edit(request, title):
 
     list= util.list_entries()
 
+    entry = util.get_entry(title)
+
     if entry in list:
+
+        return render(request, "encyclopedia/html", {
+            "result": entry
+        })
 
 
 
