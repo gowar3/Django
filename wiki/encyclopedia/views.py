@@ -63,7 +63,10 @@ def search(request):
 def new(request):
 
     entries = util.list_entries()
-    
+
+    if request.POST["title"] in entries:
+
+        return HttpResponseRedirect()
     if request.method == "POST":
 
         title = request.POST["title"]
