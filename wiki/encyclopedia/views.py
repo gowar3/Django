@@ -42,7 +42,7 @@ def search(request):
 
     for entry in pages:
 
-        if search_term in entry:
+        if search_term.lower() in entry.lower():
 
             result = util.get_entry(entry)
 
