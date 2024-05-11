@@ -36,13 +36,13 @@ def entry(request, entry):
 def search(request):
 
 #check how to search with cap insensitive
-    search_term = request.GET.get("q", "").lower()
+    search_term = request.GET.get("q", "")
 
     entries = util.list_entries()
 
     for entry in entries:
 
-        if search_term in entry.lower():
+        if search_term.lower() in entry:
 
             result = util.get_entry(entry)
 
@@ -52,10 +52,10 @@ def search(request):
             return render(request, "encyclopedia/error.html")
 
 
-    return render(request, "encyclopedia/entry.html", {
-        "result": markdown2.markdown(result),
-        "title": entry
-    })
+        return render(request, "encyclopedia/entry.html", {
+            "result": markdown2.markdown(result),
+            "title": entry
+        })
 
 
 
