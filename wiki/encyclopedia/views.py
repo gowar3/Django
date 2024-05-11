@@ -35,13 +35,13 @@ def entry(request, entry):
 
 def search(request):
 
-    search_term = request.GET.get("q", "")
+    search_term = request.GET.get("q", "").lower()
 
     entries = util.list_entries()
 
     for word in entries:
 
-        if search_term == word:
+        if search_term == word.lower():
 
             result = util.get_entry(word)
 
