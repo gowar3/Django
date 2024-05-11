@@ -41,7 +41,7 @@ def search(request):
 
     for entry in entries:
 
-        if search_term in entry:
+        if search_term == entry:
 
             result = util.get_entry(entry)
 
@@ -50,10 +50,10 @@ def search(request):
             return render(request, "encyclopedia/error.html")
 
 
-    return render(request, "encyclopedia/entry.html", {
-        "result": markdown2.markdown(result),
-        "title": search_term
-    })
+        return render(request, "encyclopedia/entry.html", {
+            "result": markdown2.markdown(result),
+            "title": search_term
+        })
 
 
 
