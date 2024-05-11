@@ -42,7 +42,7 @@ def search(request):
 
     for entry in entries:
 
-        if search_term in entry:
+        if search_term == entry:
 
             result = util.get_entry(entry)
 
