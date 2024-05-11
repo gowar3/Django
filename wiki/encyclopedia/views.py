@@ -50,10 +50,10 @@ def search(request):
             return render(request, "encyclopedia/error.html")
 
 
-        return render(request, "encyclopedia/entry.html", {
-            "result": markdown2.markdown(result),
-            "title": search_term
-        })
+    return render(request, "encyclopedia/entry.html", {
+        "result": markdown2.markdown(result),
+        "title": search_term
+    })
 
 
 
