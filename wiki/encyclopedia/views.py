@@ -71,7 +71,7 @@ def new(request):
 
         if title in entries:
 
-            return HttpResponse("Error: entry already exist")
+            return render(request, "encyclopedia/error.html")
 
 
         util.save_entry(request.POST["title"], request.POST["content"])
