@@ -38,9 +38,9 @@ def search(request):
 #check how to search with cap insensitive
     search_term = request.GET.get("q", "")
 
-    pages = util.list_entries()
+    entries = util.list_entries()
 
-    for entry in pages:
+    for entry in entries:
 
         if search_term.lower() in entry.lower():
 
