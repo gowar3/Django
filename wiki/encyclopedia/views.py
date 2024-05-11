@@ -47,7 +47,7 @@ def search(request):
 
 
 #check how to get the result with substring for search
-    if not result:
+    else:
 
         return render(request, "encyclopedia/error.html")
 
