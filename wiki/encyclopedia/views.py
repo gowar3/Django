@@ -44,7 +44,7 @@ def search(request):
 
         if search_term in entry:
 
-            result = util.get_entry(search_term)
+            result = util.get_entry(entry)
 
 
 
