@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import markdown2
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 import random
 
 from . import util
@@ -66,7 +66,9 @@ def new(request):
 
     if request.POST["title"] in entries:
 
-        return HttpResponseRedirect()
+        return HttpResponse("Error: entry already exist")
+
+
     if request.method == "POST":
 
         title = request.POST["title"]
