@@ -41,18 +41,17 @@ def search(request):
 
     for word in entries:
 
-        if search_term == word.lower():
+        if search_term in word.lower():
 
             result = util.get_entry(word)
 
-        else:
+            return render(request, "encyclopedia/entry.html", {
+            "result": markdown2.markdown(result),
+            "title": word
+        })
 
-            return render(request, "encyclopedia/error.html")
 
-        return render(request, "encyclopedia/entry.html", {
-        "result": markdown2.markdown(result),
-        "title": search_term
-    })
+    return render(request, "encyclopedia/error.html")
 
 
 
