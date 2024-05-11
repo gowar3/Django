@@ -46,8 +46,6 @@ def search(request):
 
             result = util.get_entry(entry)
 
-
-
 #check how to get the result with substring for search
         else:
 
