@@ -35,6 +35,8 @@ def entry(request, entry):
 
 def search(request):
 
+## check how to display a list of matches
+
     search_term = request.GET.get("q", "").lower()
 
     entries = util.list_entries()
