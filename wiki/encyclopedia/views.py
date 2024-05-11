@@ -39,20 +39,20 @@ def search(request):
 
     entries = util.list_entries()
 
-    for page in entries:
+    for word in entries:
 
-        if search_term == page:
+        if search_term == word:
 
-            result = util.get_entry(page)
-
-            return render(request, "encyclopedia/entry.html", {
-            "result": markdown2.markdown(result),
-            "title": search_term
-        })
+            result = util.get_entry(word)
 
         else:
 
             return render(request, "encyclopedia/error.html")
+
+        return render(request, "encyclopedia/entry.html", {
+        "result": markdown2.markdown(result),
+        "title": search_term
+    })
 
 
 
