@@ -40,21 +40,23 @@ def search(request):
 
     pages = util.list_entries()
 
-    if search_term in pages:
+    for entry in pages:
 
-        result = util.get_entry(search_term)
+        if search_term in entry:
+
+            result = util.get_entry(search_term)
 
 
 
 #check how to get the result with substring for search
-    else:
+        else:
 
-        return render(request, "encyclopedia/error.html")
+            return render(request, "encyclopedia/error.html")
 
 
-    return render(request, "encyclopedia/entry.html", {
-        "result": markdown2.markdown(result),
-        "title": search_term
+        return render(request, "encyclopedia/entry.html", {
+            "result": markdown2.markdown(result),
+            "title": search_term
     })
 
 
