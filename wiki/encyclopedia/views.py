@@ -36,13 +36,13 @@ def entry(request, entry):
 def search(request):
 
 #check how to search with cap insensitive
-    search_term = request.GET.get("q", "")
+    search_term = request.GET.get("q", "").lower()
 
     entries = util.list_entries()
 
     for entry in entries:
 
-        if search_term in entry:
+        if search_term in entry.title.lower():
 
             result = util.get_entry(entry)
 
