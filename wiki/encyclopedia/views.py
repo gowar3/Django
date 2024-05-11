@@ -56,7 +56,7 @@ def search(request):
 
         return render(request, "encyclopedia/entry.html", {
             "result": markdown2.markdown(result),
-            "title": search_term
+            "title": entry
     })
 
 
