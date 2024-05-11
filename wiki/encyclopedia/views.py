@@ -45,15 +45,17 @@ def search(request):
 
             result = util.get_entry(page)
 
+            return render(request, "encyclopedia/entry.html", {
+            "result": markdown2.markdown(result),
+            "title": search_term
+        })
+
         else:
 
             return render(request, "encyclopedia/error.html")
 
 
-        return render(request, "encyclopedia/entry.html", {
-            "result": markdown2.markdown(result),
-            "title": search_term
-        })
+
 
 
 
