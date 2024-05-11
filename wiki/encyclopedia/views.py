@@ -42,7 +42,7 @@ def search(request):
 
     for entry in entries:
 
-        if search_term.lower() in entry.title.lower():
+        if search_term.lower() in entry.lower():
 
             result = util.get_entry(entry)
 
