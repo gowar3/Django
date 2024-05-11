@@ -24,7 +24,9 @@ def entry(request, entry):
 
     else:
 
-        return render(request, "encyclopedia/error.html")
+        return render(request, "encyclopedia/error.html", {
+            "error": "Entry not found"
+        })
 
     return render(request, "encyclopedia/entry.html", {
         "result": title,
@@ -53,7 +55,9 @@ def search(request):
         })
 
 
-    return render(request, "encyclopedia/error.html")
+    return render(request, "encyclopedia/error.html", {
+        "error": "Page not Found"
+    })
 
 
 
@@ -71,7 +75,9 @@ def new(request):
 
         if title in entries:
 
-            return render(request, "encyclopedia/error.html")
+            return render(request, "encyclopedia/error.html", {
+                "error": "Entry already exist"
+            })
 
 
         util.save_entry(request.POST["title"], request.POST["content"])
