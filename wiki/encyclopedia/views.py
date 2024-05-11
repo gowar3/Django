@@ -39,11 +39,11 @@ def search(request):
 
     entries = util.list_entries()
 
-    for entry in entries:
+    for page in entries:
 
-        if search_term == entry:
+        if search_term == page:
 
-            result = util.get_entry(entry)
+            result = util.get_entry(page)
 
         else:
 
