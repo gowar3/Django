@@ -36,7 +36,7 @@ def entry(request, entry):
 def search(request):
 
 #check how to search with cap insensitive
-    search_term = request.GET.get("q", "").lower()
+    search_term = request.GET.get("q", "")
 
     entries = util.list_entries()
 
