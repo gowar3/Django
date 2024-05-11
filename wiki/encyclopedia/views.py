@@ -64,14 +64,15 @@ def new(request):
 
     entries = util.list_entries()
 
-    if request.POST["title"] in entries:
-
-        return HttpResponse("Error: entry already exist")
-
 
     if request.method == "POST":
 
         title = request.POST["title"]
+
+        if title in entries:
+
+            return HttpResponse("Error: entry already exist")
+
 
         util.save_entry(request.POST["title"], request.POST["content"])
 
