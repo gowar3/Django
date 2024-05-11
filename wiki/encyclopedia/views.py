@@ -40,22 +40,22 @@ def search(request):
 
     entries = util.list_entries()
 
-    for entry in entries:
+    ##for entry in entries:
 
-        if search_term == entry:
+    if search_term in entries:
 
-            result = util.get_entry(entry)
+        result = util.get_entry(search_term)
 
-        else:
-    #check how to get the result with substring for search
+    else:
+#check how to get the result with substring for search
 
-            return render(request, "encyclopedia/error.html")
+        return render(request, "encyclopedia/error.html")
 
 
-        return render(request, "encyclopedia/entry.html", {
-            "result": markdown2.markdown(result),
-            "title": entry
-    })
+    return render(request, "encyclopedia/entry.html", {
+        "result": markdown2.markdown(result),
+        "title": search_term
+})
 
 
 
