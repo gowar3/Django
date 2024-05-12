@@ -37,7 +37,6 @@ def entry(request, entry):
 
 def search(request):
 
-## check how to display a list of matches
 
     search_term = request.GET.get("q", "").lower()
 
@@ -61,7 +60,7 @@ def search(request):
 
             list.append(word)
 
-    if list != None:
+    if list:
 
 
         return render(request, "encyclopedia/search.html", {
