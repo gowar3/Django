@@ -60,7 +60,7 @@ def search(request):
 
             list.append(word)
 
-    if list:
+    if list != None:
 
 
         return render(request, "encyclopedia/search.html", {
