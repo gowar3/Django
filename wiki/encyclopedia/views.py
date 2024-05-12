@@ -45,7 +45,7 @@ def search(request):
 
     for word in entries:
 
-        if search_term in word.lower():
+        if search_term == word.lower():
 
             result = util.get_entry(word)
 
