@@ -58,6 +58,8 @@ def search(request):
 
             list = []
 
+            list.append(word)
+
             
 
 
