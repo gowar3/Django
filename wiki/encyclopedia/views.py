@@ -54,6 +54,12 @@ def search(request):
             "title": word
         })
 
+        if search_term in word.lower():
+
+            list = []
+
+            
+
 
     return render(request, "encyclopedia/error.html", {
         "error": "Page not Found"
