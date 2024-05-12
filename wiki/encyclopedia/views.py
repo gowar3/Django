@@ -60,7 +60,11 @@ def search(request):
 
             list.append(word)
 
-            
+            return render(request, "encyclopedia/search.html", {
+                "entries": list
+            })
+
+
 
 
     return render(request, "encyclopedia/error.html", {
