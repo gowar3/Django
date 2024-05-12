@@ -54,7 +54,7 @@ def search(request):
             "title": word
         })
 
-        if search_term in word.lower():
+        elif search_term in word.lower():
 
             list = []
 
