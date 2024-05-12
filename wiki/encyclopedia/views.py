@@ -43,6 +43,8 @@ def search(request):
 
     entries = util.list_entries()
 
+    list= []
+
     for word in entries:
 
         if search_term == word.lower():
@@ -56,7 +58,6 @@ def search(request):
 
         elif search_term in word.lower():
 
-            list = []
 
             list.append(word)
 
