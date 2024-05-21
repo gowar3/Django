@@ -22,16 +22,18 @@ def entry(request, entry):
 
         title = markdown2.markdown(page)
 
+        return render(request, "encyclopedia/entry.html", {
+        "result": title,
+        "title": entry
+    })
+
     else:
 
         return render(request, "encyclopedia/error.html", {
             "error": "Entry not found"
         })
 
-    return render(request, "encyclopedia/entry.html", {
-        "result": title,
-        "title": entry
-    })
+
 
 
 
