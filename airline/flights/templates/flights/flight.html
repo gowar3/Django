@@ -24,7 +24,7 @@
 
     <h2>Add Passenger</h2>
 
-    <form action="{% url 'book' flight.id %}" method="post">
+    <form action="{% url 'book' flight.id %}" method="POST">
         {% csrf_token %}
         <select name="passenger">
 
