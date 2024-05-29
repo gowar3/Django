@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .models import Flight, Passenger
 
@@ -28,3 +30,5 @@ def book(request, flight_id):
         passenger = Passenger.objects.get(pk=int(request.POST["passenger"]))
 
         passenger.flights.add(flight)
+
+        return HttpResponseRedirect(reverse("flight", args=(flight.id)))
