@@ -22,5 +22,14 @@
         {% endfor %}
     </ul>
 
+    <h2>Add Passenger</h2>
+
+    <form action="{% url 'book' flight.id method="post" %}>
+        {% csrf_token %}
+        <select name="passenger">
+            
+        </select>
+    </form>
+
     <a href="{% url 'index' %}">Back to Flight List</a>
 {% endblock %}
