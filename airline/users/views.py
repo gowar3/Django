@@ -11,7 +11,7 @@ def index(request):
 
         return HttpResponseRedirect(reverse("login"))
 
-    return render(request, "users/user/html")
+    return render(request, "users/user.html")
 
 def login_view(request):
 
