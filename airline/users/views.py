@@ -10,6 +10,7 @@ def index(request):
     if not request.user.is_authenticated:
 
         return HttpResponseRedirect(reverse("login"))
+    
 
 def login_view(request):
 
@@ -19,7 +20,7 @@ def login_view(request):
 
         user = authenticate(request, username=username, password=password)
 
-        if user is None:
+        if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
         else:
