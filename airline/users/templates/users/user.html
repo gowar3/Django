@@ -9,4 +9,6 @@
         <li>Email: {{ request.user.email }}</li>
     </ul>
 
+    <a href="{% url 'login' %}">Log Out</a>
+
 {% endblock %}
