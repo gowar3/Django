@@ -9,5 +9,12 @@
 
     <form action="{% url 'new' %}" method="POST">
         {% csrf token %}
+        <p><label for= "edit">New Listing</label></p>
+        <label>Title</label>
+        <input type="text" name="name">
+        <br>
+        <label>Description</label>
+        <br>
+        <textarea id="edit" name="description"></textarea>
         
     </form>
