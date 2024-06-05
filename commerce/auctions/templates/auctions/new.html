@@ -5,7 +5,7 @@
     New
 {% endblock %}
 
-{% body block %}
+{% block body %}
 
     <form action="{% url 'new' %}" method="POST">
         {% csrf token %}
@@ -16,5 +16,8 @@
         <label>Description</label>
         <br>
         <textarea id="edit" name="description"></textarea>
-        
+        <br>
+        <input type="submit" value="Save">
     </form>
+
+    {% endblock %}
