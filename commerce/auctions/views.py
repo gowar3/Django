@@ -63,4 +63,6 @@ def register(request):
         return render(request, "auctions/register.html")
 
 
-def create(request, )
+def create(request, listing_id):
+
+    if 
