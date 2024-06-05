@@ -65,4 +65,6 @@ def register(request):
 
 def create(request, listing_id):
 
-    if 
+    if request.method == "POST":
+
+        
