@@ -7,8 +7,8 @@ class User(AbstractUser):
 
 class Listing(models.Model):
 
-    code = models.CharField(max_length=3)
-    city= models.CharField(max_length=64)
+    Name = models.CharField(max_length=64)
+    Price = models.IntegerField()
 
 
     origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
