@@ -65,9 +65,14 @@ def register(request):
 
 def new(request):
 
+
     if request.method == "POST":
 
-        return HttpResponseRedirect(reverse("))
+        title = request.POST["title"]
+        description = request.POST["description"]
+        price = request.POST["price"]
+
+        return HttpResponseRedirect(reverse("index", ))
 
         pass
 
