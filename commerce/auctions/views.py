@@ -67,6 +67,8 @@ def new(request):
 
     if request.method == "POST":
 
+        return HttpResponseRedirect(reverse("))
+
         pass
 
     else:
