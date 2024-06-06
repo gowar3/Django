@@ -68,9 +68,9 @@ def new(request):
 
     if request.method == "POST":
 
-        title = request.POST.get["title"]
-        description = request.POST.get["description"]
-        price = request.POST.get["price"]
+        title = request.POST["title"]
+        description = request.POST["description"]
+        price = request.POST["price"]
 
         listing = Listing.objects.create(title=title, description=description, price=price)
 
