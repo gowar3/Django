@@ -74,9 +74,7 @@ def new(request):
 
         listing = Listing.objects.create(title=title, description=description, price=price)
 
-        return HttpResponseRedirect(reverse("index", ))
-
-        pass
+        return HttpResponseRedirect(reverse("index", args=[listing]))
 
     else:
 
