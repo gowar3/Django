@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User
+from .models import User, Listing
 
 
 def index(request):
@@ -68,9 +68,11 @@ def new(request):
 
     if request.method == "POST":
 
-        title = request.POST["title"]
-        description = request.POST["description"]
-        price = request.POST["price"]
+        title = request.POST.get["title"]
+        description = request.POST.get["description"]
+        price = request.POST.get["price"]
+
+        listing = Listing.objects.create(title=title, description=description, price=price)
 
         return HttpResponseRedirect(reverse("index", ))
 
