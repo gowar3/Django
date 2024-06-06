@@ -11,8 +11,6 @@ class Listing(models.Model):
     description = models.CharField(max_length=64)
     price = models.IntegerField()
 
-    listings = 
-
     def __str__(self):
 
         return f"{self.id}: {self.title} {self.price}"
