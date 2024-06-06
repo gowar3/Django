@@ -7,9 +7,10 @@ class User(AbstractUser):
 
 class Listing(models.Model):
 
-    name = models.CharField(max_length=64)
+    title = models.CharField(max_length=64)
+    description = models.CharField(max_length=64)
     price = models.IntegerField()
 
     def __str__(self):
 
-        return f"{self.id}: {self.name} to {self.price}"
+        return f"{self.id}: {self.title} to {self.price}"
