@@ -9,7 +9,7 @@ from .models import User, Listing
 
 def index(request):
     return render(request, "auctions/index.html", {
-        "listings": []
+        "listings": Listing.objects.all()
     })
 
 
@@ -76,7 +76,7 @@ def new(request):
 
         listing = Listing.objects.create(title=title, description=description, price=price)
 
-        return HttpResponseRedirect(reverse("index", args=[listing]))
+        return HttpResponseRedirect(reverse("index"))
 
     else:
 
