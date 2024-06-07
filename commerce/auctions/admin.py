@@ -7,4 +7,7 @@ from .models import Listing
 class ListingAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "description", "price")
 
+    class Meta:
+        ordering = ["position"]
+
 admin.site.register(Listing, ListingAdmin)
