@@ -13,4 +13,4 @@ class Listing(models.Model):
 
     def __str__(self):
 
-        return f"{self.id}: {self.title} {self.price}"
+        return f"{self.id}: {self.title} {self.description} {self.price}"
