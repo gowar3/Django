@@ -14,6 +14,3 @@ class Listing(models.Model):
     def __str__(self):
 
         return f"{self.id}: {self.title} {self.description} {self.price}"
-
-    class Meta:
-        ordering = ["position"]
