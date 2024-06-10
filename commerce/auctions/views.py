@@ -83,10 +83,10 @@ def new(request):
         return render(request, "auctions/new.html")
 
 
-def listing(request):
+def listing(request, listing):
 
     listings = Listing.objects.all()
 
     for listing in listings:
 
-        
+
