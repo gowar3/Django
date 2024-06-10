@@ -87,6 +87,8 @@ def listing(request, listing):
 
     listings = Listing.objects.all()
 
-    for listing in listings:
+    if listing in listings:
 
-
+        return render(request, "auctions/listing.html", {
+            "listing": listing
+        })
