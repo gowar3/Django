@@ -90,5 +90,5 @@ def listing(request, listing):
     if listing in listings:
 
         return render(request, "auctions/listing.html", {
-            "listing": listing
+            "listing": listing.title
         })
