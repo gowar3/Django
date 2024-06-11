@@ -110,5 +110,5 @@ def wishlist(request, wish):
         wishlist = request.session["wishlist"]
 
 
-    return HttpResponseRedirect(reverse("wishlist", args=[wishlist]))
+        return HttpResponseRedirect(reverse("wishlist", args=[wishlist]))
 
