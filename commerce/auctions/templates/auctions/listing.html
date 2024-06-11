@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <form action= "{% url 'wishlist' listing.title %}" method = "post">
+    <form action= "{% url 'wishlist' listing %}" method = "post">
         {% csrf_token %}
 
 
