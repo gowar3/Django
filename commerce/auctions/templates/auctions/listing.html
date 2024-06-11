@@ -2,7 +2,6 @@
 
 {% block body %}
 
-    {% csrf_token %}
 
     <h2>{{ listing.title }}</h2>
 
@@ -12,7 +11,8 @@
 
     <br>
 
-    <form action= "{% url 'wishlist' %}" method = "post">
+    <form action= "{% url 'wishlist' listing.title %}" method = "post">
+        {% csrf_token %}
         <input type= "submit" value= "Add to Wishlist">
     </form>
 
