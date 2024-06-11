@@ -110,8 +110,11 @@ def wishlist(request, wish):
 
 
         return HttpResponseRedirect(reverse("wishlist"))
-    
+
 
     return render(request, "auctions/wishlist.html", {
         "wishlist": request.session["wishlist"]
     })
+
+
+##check how to submit the wishlist and the correlation between the html pages
