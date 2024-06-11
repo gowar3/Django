@@ -90,3 +90,15 @@ def listing(request, listing):
     return render(request, "auctions/listing.html", {
         "listing": listing
     })
+
+
+
+def wishlist(request, wish):
+
+    if request.method == "POST":
+
+        wish = Listing.objects.get(title = wish)
+
+        return render(request, "auctions/wishlist.html", {
+            "wish": wish
+        })
