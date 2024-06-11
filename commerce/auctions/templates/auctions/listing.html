@@ -8,6 +8,6 @@
 
     <label>{{ listing.price }}</label>
 
-    <a href="{% url 'wishlist' listing.title %}">Add to wishlist</a>
+    <a href="{% url 'wishlist' listing.title %}" method = "post">Add to wishlist</a>
 
 {% endblock %}
