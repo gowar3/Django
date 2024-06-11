@@ -108,10 +108,9 @@ def wishlist(request, wish):
 
         request.session["wishlist"] += [wish]
 
-        wishlist = request.session["wishlist"]
 
-
-        return HttpResponseRedirect(reverse("wishlist", args=[wishlist]))
+        return HttpResponseRedirect(reverse("wishlist"))
+    
 
     return render(request, "auctions/wishlist.html", {
         "wishlist": request.session["wishlist"]
