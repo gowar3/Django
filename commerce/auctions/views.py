@@ -95,9 +95,12 @@ def listing(request, listing):
 
 def wishlist(request, wish):
 
-    if request.method == "POST":
+    if "wishlist" not in request.session:
 
         request.session["wishlist"] = []
+
+    if request.method == "POST":
+
 
         wish = Listing.objects.get(title = wish)
 
