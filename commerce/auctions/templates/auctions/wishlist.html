@@ -4,6 +4,10 @@
 
     <h2>Wishlist</h2>
 
+    {% for wish in wishlist %}
     <ol>
         <li>{{ wish }}</li>
     </ol>
+    {% endfor %}
+
+{% endblock %}
