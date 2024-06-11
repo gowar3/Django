@@ -99,7 +99,6 @@ def wishlist(request, wish):
 
         request.session["wishlist"] = []
 
-        return render(request, "auctions/wishlist.html", )
 
     if request.method == "POST":
 
@@ -108,7 +107,8 @@ def wishlist(request, wish):
 
         request.session["wishlist"] += [wish]
 
-        return render(request, "auctions/wishlist.html", {
-            "wishlist": request.session["wishlist"]
-        })
+
+    return render(request, "auctions/wishlist.html", {
+        "wishlist": request.session["wishlist"]
+    })
 
