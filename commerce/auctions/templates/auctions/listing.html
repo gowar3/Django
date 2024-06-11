@@ -12,6 +12,8 @@
 
     <br>
 
-    <a href="{% url 'wishlist' user.username %}" method = "post">Add to wishlist</a>
+    <form action= "{% url 'wishlist' %}" method = "post">
+        <input type= "submit" value= "Add to Wishlist">
+    </form>
 
 {% endblock %}
