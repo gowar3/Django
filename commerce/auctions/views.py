@@ -93,7 +93,7 @@ def listing(request, listing):
 
 
 
-def wishlist(request, wishlist):
+def wishlist(request, wish):
 
     if "wishlist" not in request.session:
 
@@ -104,7 +104,7 @@ def wishlist(request, wishlist):
     if request.method == "POST":
 
 
-        wish = Listing.objects.get(title = wishlist)
+        wish = Listing.objects.get(title = wish)
 
         request.session["wishlist"] += [wish]
 
