@@ -109,7 +109,6 @@ def wishlist(request, wish):
 
 
     return render(request, "auctions/wishlist.html", {
-        "wishlist": request.session["wishlist"],
-        "user": request.session["username"]
+        "wishlist": request.session["wishlist"]
     })
 
