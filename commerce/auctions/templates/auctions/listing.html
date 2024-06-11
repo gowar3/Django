@@ -2,17 +2,18 @@
 
 {% block body %}
 
-
-    <h2>{{ listing.title }}</h2>
-
-    <p>{{ listing.description }}</p>
-
-    <label>{{ listing.price }}</label>
-
-    <br>
-
-    <form action= "{% url 'wishlist' %}" method = "post">
+    <form action= "{% url 'wishlist' listing.title %}" method = "post">
         {% csrf_token %}
+
+
+        <h2>{{ listing.title }}</h2>
+
+        <p>{{ listing.description }}</p>
+
+        <label>{{ listing.price }}</label>
+
+        <br>
+
         <input type= "submit" value= "Add to Wishlist">
     </form>
 
