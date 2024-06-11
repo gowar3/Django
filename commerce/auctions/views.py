@@ -97,6 +97,8 @@ def wishlist(request, wish):
 
     if request.method == "POST":
 
+        request.session["]
+
         wish = Listing.objects.get(title = wish)
 
         return render(request, "auctions/wishlist.html", {
