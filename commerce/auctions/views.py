@@ -100,6 +100,7 @@ def wishlist(request, wishlist):
         request.session["wishlist"] = []
 
 
+
     if request.method == "POST":
 
 
@@ -112,3 +113,6 @@ def wishlist(request, wishlist):
 
         return HttpResponseRedirect(reverse("wishlist", args=[wishlist]))
 
+    return render(request, "auctions/wishlist.html", {
+        "wishlist": request.session["wishlist"]
+    })
