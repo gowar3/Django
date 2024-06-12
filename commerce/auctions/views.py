@@ -93,7 +93,7 @@ def listing(request, listing):
 
 
 
-def wishlist(request, wish):
+def wishlist(request):
 
     if "wishlist" not in request.session:
 
