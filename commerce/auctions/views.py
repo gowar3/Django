@@ -112,7 +112,7 @@ def wishlist(request, user):
 
         serialized_data = serializer.data
 
-        request.session["wishlist"] += [wish]
+        request.session["wishlist"] += [serialized_data]
 
 
         return HttpResponseRedirect(reverse("wishlist", args=[user]))
