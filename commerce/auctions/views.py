@@ -85,9 +85,7 @@ def new(request):
 
 def listing(request, listing):
 
-    listing_title = request.POST.get["listing_title"]
-
-    listing = Listing.objects.get(title = listing_title)
+    listing = Listing.objects.get(title = listing)
 
     return render(request, "auctions/listing.html", {
         "listing": listing
@@ -105,8 +103,9 @@ def wishlist(request, user):
 
     if request.method == "POST":
 
+        listing_title = request.POST.get["listing_title"]
 
-        wish = Listing.objects.get(title = listing.title)
+        wish = Listing.objects.get(title = listing_title)
 
         request.session["wishlist"] += [wish]
 
