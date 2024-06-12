@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse
 
 from .models import User, Listing
+from .serializers import ListingSerializer  # Assuming your serializer is in a file named serializers.py
 
 
 def index(request):
