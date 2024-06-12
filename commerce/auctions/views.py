@@ -104,7 +104,7 @@ def wishlist(request, user):
     if request.method == "POST":
 
 
-        wish = Listing.objects.get(title = wish.title)
+        wish = Listing.objects.get(title = listing.title)
 
         request.session["wishlist"] += [wish]
 
