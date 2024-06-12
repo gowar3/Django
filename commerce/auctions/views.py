@@ -103,7 +103,7 @@ def wishlist(request, user):
 
     if request.method == "POST":
 
-        listing_title = request.POST.get["listing_title"]
+        listing_title = request.POST["listing_title"]
 
         wish = Listing.objects.get(title = listing_title)
 
