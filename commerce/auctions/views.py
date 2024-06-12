@@ -107,7 +107,11 @@ def wishlist(request, user):
 
         wish = Listing.objects.get(title = listing_title)
 
-        request.session["wishlist"] += [wish]
+        serializer = ListingSerializer(wish)
+
+        serialized_data = serializer.data
+
+        request.session["wishlist"] += [serialized_data]
 
 
         return HttpResponseRedirect(reverse("wishlist", args=[user]))
