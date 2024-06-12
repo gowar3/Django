@@ -85,7 +85,9 @@ def new(request):
 
 def listing(request, listing):
 
-    listing = Listing.objects.get(title = listing)
+    listing_title = request.POST.get["listing_title"]
+
+    listing = Listing.objects.get(title = listing_title)
 
     return render(request, "auctions/listing.html", {
         "listing": listing
