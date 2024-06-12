@@ -123,4 +123,4 @@ def wishlist(request, user):
     })
 
 
-##check how to submit the wishlist and the correlation between the html pages
+##check how to use the many to many for the wishlist
