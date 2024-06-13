@@ -29,7 +29,10 @@
         <br>
         <input type="submit" value= "Add comment">
     </form>
-
-    {{ comments }}
+    <br>
+    <h2>Comments</h2>
+    {% for comment in comments %}
+        {{ comment }}
+    {% endfor %}
 
 {% endblock %}
