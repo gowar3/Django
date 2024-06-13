@@ -26,9 +26,9 @@ class Bid(models.Model):
 
 class Comment(models.Model):
 
-    user = models.CharField(max_length=64)
+    user = models.ForeignKey(User, on_delete=CASCADE)
     comment = models.CharField(max_length=128)
 
     def __str__(self):
 
-        return f"{self.user}: {self.comment}"
+        return f"{self.user.username}: {self.comment}"
