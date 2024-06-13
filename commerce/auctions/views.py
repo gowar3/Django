@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import User, Listing
+from .models import User, Listing, Comment, Bid
 from .serializers import ListingSerializer  # Assuming your serializer is in a file named serializers.py
 
 
