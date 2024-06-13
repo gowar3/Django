@@ -22,6 +22,7 @@
         {% csrf_token %}
 
         <label>Add comment</label>
+        <input tyoe="hidden" name="user_comment" value= "{{ user.username }}">
         <input type="text" name="comment">
     </form>
 
