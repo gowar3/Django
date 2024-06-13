@@ -88,6 +88,11 @@ def listing(request, listing):
 
     listing = Listing.objects.get(title = listing)
 
+    user = request.POST["user.username"]
+    comment = request.POST["add_comment"]
+
+    comments = Comment.
+
     return render(request, "auctions/listing.html", {
         "listing": listing
     })
