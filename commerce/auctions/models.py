@@ -27,7 +27,7 @@ class Bid(models.Model):
 class Comment(models.Model):
 
     user = models.CharField(max_length=64)
-    comments = models.CharField(max_lenght=128)
+    comments = models.CharField(max_length=128)
 
     def __str__(self):
 
