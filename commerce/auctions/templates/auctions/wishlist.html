@@ -6,7 +6,7 @@
 
     <ol>
     {% for wish in wishlist %}
-        <li>{{ wish.title }}: ${{ wish.price }}</li>
+        <a href="{% url 'listing' wish.title %}"><li>{{ wish.title }}: ${{ wish.price }}</li></a>
     {% endfor %}
     </ol>
 
