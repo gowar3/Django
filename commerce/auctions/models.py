@@ -5,11 +5,21 @@ from django.db import models
 class User(AbstractUser):
     pass
 
+class Comment(models.Model):
+
+    user = models.ForeignKey(User, on_delete=CASCADE)
+    comment = models.CharField(max_length=128)
+
+    def __str__(self):
+
+        return f"{self.user.username}: {self.comment}"
+
 class Listing(models.Model):
 
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
+    comments = models.ManyToManyField(Comment, blank=True)
 
     def __str__(self):
 
@@ -23,12 +33,3 @@ class Bid(models.Model):
     def __str__(self):
 
         return f"{self.owner} {self.offer}"
-
-class Comment(models.Model):
-
-    user = models.ForeignKey(User, on_delete=CASCADE)
-    comment = models.CharField(max_length=128)
-
-    def __str__(self):
-
-        return f"{self.user.username}: {self.comment}"
