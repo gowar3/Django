@@ -7,7 +7,7 @@ class User(AbstractUser):
 
 class Comment(models.Model):
 
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.CharField(max_length=128)
 
     def __str__(self):
