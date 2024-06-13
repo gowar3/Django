@@ -10,6 +10,7 @@ class Listing(models.Model):
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
+    comments = models.ManyToManyField(Comment, blank=True, related_name="Listings")
 
     def __str__(self):
 
