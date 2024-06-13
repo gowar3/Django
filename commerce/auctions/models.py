@@ -14,3 +14,12 @@ class Listing(models.Model):
     def __str__(self):
 
         return f"{self.title} {self.description} {self.price}"
+
+class Bid(models.Model):
+
+    owner = models.CharField(max_length=64)
+    offer = models.IntegerField()
+
+    def __str__(self):
+
+        return 
