@@ -88,7 +88,7 @@ def listing(request, listing):
 
     listing = Listing.objects.get(title = listing)
 
-    user = request.POST["user"]
+    user = request.POST["user_comment"]
     comment = request.POST["comment"]
 
     comments = Comment.objects.create(user=user, comment=comment)
