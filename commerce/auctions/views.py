@@ -86,6 +86,8 @@ def new(request):
 
 def listing(request, listing):
 
+    comments = Comment.objects.all()
+
     listing = Listing.objects.get(title = listing)
 
     if request.method == "POST":
@@ -95,7 +97,8 @@ def listing(request, listing):
         new_comment = Comment.objects.create(user=user, comment=comment)
 
     return render(request, "auctions/listing.html", {
-        "listing": listing
+        "listing": listing,
+        "comments": comments
     })
 
 
