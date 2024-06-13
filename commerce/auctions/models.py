@@ -7,12 +7,12 @@ class User(AbstractUser):
 
 class Comment(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=64)
     comment = models.CharField(max_length=128)
 
     def __str__(self):
 
-        return f"{self.user.username}: {self.comment}"
+        return f"{self.user}: {self.comment}"
 
 class Listing(models.Model):
 
