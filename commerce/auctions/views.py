@@ -88,6 +88,8 @@ def listing(request, listing):
 
     if "comments" not in request.session:
 
+        request.session["wishlist"] = ()
+
     listing = Listing.objects.get(title = listing)
 
     if request.method == "POST":
