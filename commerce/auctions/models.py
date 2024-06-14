@@ -19,7 +19,7 @@ class Listing(models.Model):
 
 class Comment(models.Model):
 
-    user = models.CharField(max_length=64)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.CharField(max_length=128)
     listings = models.ManyToManyField(Listing, blank=True, related_name= "listings")
 
