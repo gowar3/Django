@@ -92,9 +92,9 @@ def listing(request, listing):
 
     listing = Listing.objects.get(title = listing)
 
-    if request.method == "POST":
+    username = ""
 
-        username = request.POST["username"]
+    if request.method == "POST":
 
         comment = request.POST["comment"]
 
