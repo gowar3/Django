@@ -92,7 +92,7 @@ def listing(request, listing):
         request.session["username"] = ()
 
     listing = Listing.objects.get(title = listing)
-
+    username = request.session["username"]
 
     if request.method == "POST":
 
