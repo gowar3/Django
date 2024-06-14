@@ -94,6 +94,8 @@ def listing(request, listing):
 
     if request.method == "POST":
 
+        username = request.POST["username"]
+
         comment = request.POST["comment"]
 
         new_comment = Comment.objects.create(comment=comment)
