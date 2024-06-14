@@ -142,5 +142,6 @@ def wishlist(request, user):
     })
 
 
+##check how to save the username for the comments
 ##check how to use the many to many for the wishlist
 ##check how to show comments for each listing
