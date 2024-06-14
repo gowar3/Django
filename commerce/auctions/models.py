@@ -5,14 +5,6 @@ from django.db import models
 class User(AbstractUser):
     pass
 
-class Comment(models.Model):
-
-    user = models.CharField(max_length=64)
-    comment = models.CharField(max_length=128)
-
-    def __str__(self):
-
-        return f"{self.user}: {self.comment}"
 
 class Listing(models.Model):
 
@@ -23,6 +15,17 @@ class Listing(models.Model):
     def __str__(self):
 
         return f"{self.title} {self.description} {self.price}"
+
+
+class Comment(models.Model):
+
+    user = models.CharField(max_length=64)
+    comment = models.CharField(max_length=128)
+    listings = models.ManyToManyField(Listing, blank=True, related_name= "listings")
+
+    def __str__(self):
+
+        return f"{self.user}: {self.comment}"
 
 class Bid(models.Model):
 
