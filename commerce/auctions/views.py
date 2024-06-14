@@ -91,6 +91,7 @@ def listing(request, listing):
     listing = Listing.objects.get(title = listing)
 
     if request.method == "POST":
+        
         user = request.POST["user_comment"]
         comment = request.POST["comment"]
 
