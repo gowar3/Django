@@ -30,8 +30,12 @@
     </form>
     <br>
     <h2>Comments</h2>
+
+    <ol>
     {% for comment in comments %}
-        {{ comment }}
+        <li>{{ username }}
+            {{ comment }}</li>
     {% endfor %}
+    </ol>
 
 {% endblock %}

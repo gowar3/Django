@@ -102,6 +102,7 @@ def listing(request, listing):
 
 
     return render(request, "auctions/listing.html", {
+        "username": user.username,
         "listing": listing,
         "comments": listing.comments.all()
     })
