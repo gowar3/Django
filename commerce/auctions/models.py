@@ -21,7 +21,7 @@ class Comment(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.CharField(max_length=128)
-    listings = models.ManyToManyField(Listing, blank=True, related_name= "listings")
+    listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
 
