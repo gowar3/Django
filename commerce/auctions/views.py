@@ -96,7 +96,7 @@ def listing(request, listing):
 
         new_comment = Comment.objects.create(user=user, comment=comment)
 
-        comment.listings
+        new_comment.listings.add()
 
 
     return render(request, "auctions/listing.html", {
