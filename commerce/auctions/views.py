@@ -89,14 +89,16 @@ def listing(request, listing):
     if "comments" not in request.session:
 
         request.session["wishlist"] = ()
+        username = ""
 
     listing = Listing.objects.get(title = listing)
 
-    username = ""
 
     if request.method == "POST":
 
         comment = request.POST["comment"]
+
+        username = request.POST["username"]
 
         new_comment = Comment.objects.create(comment=comment)
 
