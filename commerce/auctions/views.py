@@ -86,12 +86,12 @@ def new(request):
 
 def listing(request, listing):
 
-    comments = Comment.objects.all()
+    comments = Comment.objects.get(user=)
 
     listing = Listing.objects.get(title = listing)
 
     if request.method == "POST":
-        
+
         user = request.POST["user_comment"]
         comment = request.POST["comment"]
 
