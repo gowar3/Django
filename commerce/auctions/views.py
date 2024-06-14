@@ -89,7 +89,7 @@ def listing(request, listing):
     if "comments" not in request.session:
 
         request.session["comments"] = ()
-        username = ""
+        request.session["username"] = ()
 
     listing = Listing.objects.get(title = listing)
 
