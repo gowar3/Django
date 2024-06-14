@@ -86,6 +86,7 @@ def new(request):
 
 def listing(request, listing):
 
+    if "comments" not in request.session:
 
     listing = Listing.objects.get(title = listing)
 
