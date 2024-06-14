@@ -11,7 +11,7 @@ class BidAdmin(admin.ModelAdmin):
     list_display = ("owner", "offer")
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("user", "comment")
+    list_display = ("comment")
 
 
 admin.site.register(Listing, ListingAdmin)
