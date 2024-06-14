@@ -94,10 +94,10 @@ def listing(request, listing):
 
     if request.method == "POST":
 
-        user = request.POST["user_comment"]
+        username = request.POST["user_comment"]
         comment = request.POST["comment"]
 
-        new_comment = Comment.objects.create(user=user, comment=comment)
+        new_comment = Comment.objects.create(user=username, comment=comment)
 
         new_comment.listings.add(listing)
 
