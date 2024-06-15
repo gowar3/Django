@@ -19,7 +19,7 @@ class Listing(models.Model):
 
 class Comment(models.Model):
 
-    username = models.CharField(max_length=64)
+    poster = models.CharField(max_length=64)
     comment = models.CharField(max_length=128)
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
