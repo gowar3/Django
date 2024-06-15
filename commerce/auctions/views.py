@@ -89,10 +89,8 @@ def listing(request, listing):
     if "comments" not in request.session:
 
         request.session["comments"] = ()
-        request.session["username"] = ""
 
     listing = Listing.objects.get(title = listing)
-    username = ""
 
     if request.method == "POST":
 
@@ -100,13 +98,12 @@ def listing(request, listing):
 
         username = request.POST["username"]
 
-        new_comment = Comment.objects.create(comment=comment)
+        new_comment = Comment.objects.create(username=username, comment=comment)
 
         new_comment.listings.add(listing)
 
 
     return render(request, "auctions/listing.html", {
-        "username": username,
         "listing": listing,
         "comments": listing.comments.all()
     })

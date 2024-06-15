@@ -19,12 +19,13 @@ class Listing(models.Model):
 
 class Comment(models.Model):
 
+    username = models.CharField(max_length=128)
     comment = models.CharField(max_length=128)
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
 
-        return f"{self.comment}"
+        return f"{self.username}: {self.comment}"
 
 class Bid(models.Model):
 
