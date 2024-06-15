@@ -25,7 +25,7 @@ class Comment(models.Model):
 
     def __str__(self):
 
-        return f"{self.username}: {self.comment}"
+        return f"{self.poster}: {self.comment}"
 
 class Bid(models.Model):
 
