@@ -18,7 +18,9 @@
         <input type="hidden" name= "listing_title" value= "{{ listing.title }}">
         <input type= "submit" value= "Add to Wishlist">
     </form>
+
     <br>
+
     <form action= "{% url 'listing' listing.title %}" method = "post">
         {% csrf_token %}
 
@@ -31,6 +33,7 @@
         <input type="submit" value= "Add comment">
     </form>
     <br>
+
     <h2>Comments</h2>
 
     <ol>
