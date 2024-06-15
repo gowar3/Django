@@ -91,6 +91,7 @@ def listing(request, listing):
         request.session["comments"] = ()
 
     listing = Listing.objects.get(title = listing)
+    username = ""
 
     if request.method == "POST":
 
