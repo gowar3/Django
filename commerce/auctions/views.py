@@ -108,13 +108,13 @@ def listing(request, listing):
 
             new_comment.listings.add(listing)
 
-        if "bids" in request.session:
+            if "bids" in request.session:
 
-            bid = request.POST["bid"]
+                bid = request.POST["bid"]
 
-            new_bid = Bid.objects.create(owner=username, bid=bid)
+                new_bid = Bid.objects.create(owner=username, bid=bid)
 
-            new_bid.listings.add(listing)
+                new_bid.listings.add(listing)
 
     return render(request, "auctions/listing.html", {
         "listing": listing,
