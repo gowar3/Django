@@ -90,6 +90,10 @@ def listing(request, listing):
 
         request.session["comments"] = ()
 
+    if "bids" not in request.session:
+
+        request.session["bids"] = ()
+
     listing = Listing.objects.get(title = listing)
 
     if request.method == "POST":
@@ -102,19 +106,19 @@ def listing(request, listing):
 
         new_comment.listings.add(listing)
 
+        bid = request.POST["bid"]
+
+        new_bid = Bid.objects.create(owner=username, bid=bid)
+
+        new_bid.listings.add(listing)
 
     return render(request, "auctions/listing.html", {
         "listing": listing,
-        "comments": listing.comments.all()
+        "comments": listing.comments.all(),
+        "bids": listing.bids.all()
     })
 
 
-
-def bid(request, listing):
-
-    if bids not in request.session:
-
-        request.session["bids"] = ()
 
 
 
