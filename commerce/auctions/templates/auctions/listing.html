@@ -21,6 +21,15 @@
 
     <br>
 
+    <form action= "(% url 'listing' listing.title %)" method = "post">
+        {% csrf_token %}
+
+        <label for="add_bid">Add Bid</label>
+        <br>
+        <input type="hidden" name= "username" value= "{{ user.username }}">
+        <input type="text" name="bid" value=>
+    </form>
+
     <form action= "{% url 'listing' listing.title %}" method = "post">
         {% csrf_token %}
 
