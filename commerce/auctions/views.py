@@ -100,7 +100,7 @@ def listing(request, listing):
 
         username = request.POST["username"]
 
-        if request.POST["comment"]:
+        if request.POST["comment", ""]:
 
             comment = request.POST["comment", ""]
 
@@ -108,7 +108,7 @@ def listing(request, listing):
 
             new_comment.listings.add(listing)
 
-        if request.POST["bid"]:
+        if request.POST["bid", ""]:
 
             bid = request.POST["bid", ""]
 
