@@ -112,7 +112,9 @@ def listing(request, listing):
 
             new_comment.listings.add(listing)
 
+
         if bid != "":
+            
 
             new_bid = Bid.objects.create(owner=username, offer=bid)
 
