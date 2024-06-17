@@ -100,17 +100,19 @@ def listing(request, listing):
 
         username = request.POST["username"]
 
-        if request.POST["comment", ""]:
+        comment = request.POST.get("comment", "")
 
-            comment = request.POST["comment", ""]
+        bid = request.POST.get("bid", "")
+
+
+        if comment:
+
 
             new_comment = Comment.objects.create(poster=username, comment=comment)
 
             new_comment.listings.add(listing)
 
-        if request.POST["bid", ""]:
-
-            bid = request.POST["bid", ""]
+        if bid:
 
             new_bid = Bid.objects.create(owner=username, bid=bid)
 
