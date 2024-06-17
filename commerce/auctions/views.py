@@ -102,7 +102,7 @@ def listing(request, listing):
 
         if request.POST["comment"]:
 
-            comment = request.POST["comment"]
+            comment = request.POST["comment", ""]
 
             new_comment = Comment.objects.create(poster=username, comment=comment)
 
@@ -110,7 +110,7 @@ def listing(request, listing):
 
         if request.POST["bid"]:
 
-            bid = request.POST["bid"]
+            bid = request.POST["bid", ""]
 
             new_bid = Bid.objects.create(owner=username, bid=bid)
 
