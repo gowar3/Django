@@ -114,7 +114,7 @@ def listing(request, listing):
 
         if bid != "":
 
-            new_bid = Bid.objects.create(owner=username, bid=bid)
+            new_bid = Bid.objects.create(owner=username, offer=bid)
 
             new_bid.listings.add(listing)
 
