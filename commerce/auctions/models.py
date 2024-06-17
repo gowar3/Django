@@ -29,9 +29,10 @@ class Comment(models.Model):
 
 class Bid(models.Model):
 
-    owner = models.CharField(max_length=64)
+    owner = models.CharField(max_length=64, default="Anonymous")
     offer = models.IntegerField()
+    bids = models.ManytoManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):
 
-        return f"{self.owner} {self.offer}"
+        return f"{self.owner}: {self.offer}"

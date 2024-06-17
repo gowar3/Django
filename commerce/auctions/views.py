@@ -110,6 +110,14 @@ def listing(request, listing):
 
 
 
+def bid(request, listing):
+
+    if bids not in request.session:
+
+        request.session["bids"] = ()
+
+
+
 def wishlist(request, user):
 
     if "wishlist" not in request.session:
@@ -137,6 +145,8 @@ def wishlist(request, user):
     return render(request, "auctions/wishlist.html", {
         "wishlist": request.session["wishlist"]
     })
+
+
 
 
 ##check how  to save the wishlist on a many to manu in listing
