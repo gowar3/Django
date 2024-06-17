@@ -10,6 +10,8 @@
         <label>{{ listing.price }}</label>
 
         <br>
+        <br>
+        <br>
 
     {% if user.is_authenticated %}
     <form action= "{% url 'wishlist' user.username %}" method = "post">
