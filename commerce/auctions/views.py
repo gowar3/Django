@@ -116,7 +116,7 @@ def listing(request, listing):
 
             new_bid = Bid.objects.create(owner=username, offer=bid)
 
-            new_bid.listings.add(listing)
+            new_bid.bids.add(listing)
 
     return render(request, "auctions/listing.html", {
         "listing": listing,
