@@ -98,19 +98,23 @@ def listing(request, listing):
 
     if request.method == "POST":
 
-        comment = request.POST["comment"]
-
         username = request.POST["username"]
 
-        new_comment = Comment.objects.create(poster=username, comment=comment)
+        if "comments" in request.session:
 
-        new_comment.listings.add(listing)
+            comment = request.POST["comment"]
 
-        bid = request.POST["bid"]
+            new_comment = Comment.objects.create(poster=username, comment=comment)
 
-        new_bid = Bid.objects.create(owner=username, bid=bid)
+            new_comment.listings.add(listing)
 
-        new_bid.listings.add(listing)
+        if "bids" in request.session:
+
+            bid = request.POST["bid"]
+
+            new_bid = Bid.objects.create(owner=username, bid=bid)
+
+            new_bid.listings.add(listing)
 
     return render(request, "auctions/listing.html", {
         "listing": listing,
