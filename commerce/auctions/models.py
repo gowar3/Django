@@ -31,7 +31,7 @@ class Bid(models.Model):
 
     owner = models.CharField(max_length=64, default="Anonymous")
     offer = models.IntegerField()
-    bids = models.ManytoManyField(Listing, blank=True, related_name= "bids")
+    bids = models.ManyToManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):
 
