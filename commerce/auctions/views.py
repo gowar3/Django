@@ -105,14 +105,14 @@ def listing(request, listing):
         bid = request.POST.get("bid", "")
 
 
-        if comment:
+        if comment != "":
 
 
             new_comment = Comment.objects.create(poster=username, comment=comment)
 
             new_comment.listings.add(listing)
 
-        if bid:
+        if bid != "":
 
             new_bid = Bid.objects.create(owner=username, bid=bid)
 
