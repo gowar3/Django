@@ -23,7 +23,7 @@
 
     <br>
 
-    <form action= "(% url 'listing' listing.title %)" method = "post">
+    <form action= "{% url 'listing' listing.title %}" method = "post">
         {% csrf_token %}
 
         <label for="add_bid">Add Bid</label>
