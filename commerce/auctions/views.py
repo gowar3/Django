@@ -114,7 +114,7 @@ def listing(request, listing):
 
 
         if bid != "":
-            
+
 
             new_bid = Bid.objects.create(owner=username, offer=bid)
 
@@ -162,3 +162,5 @@ def wishlist(request, user):
 
 
 ##check how  to save the wishlist on a many to manu in listing
+
+##check how to pass the listing to the comments and bids in admin
