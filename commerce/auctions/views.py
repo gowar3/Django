@@ -145,7 +145,9 @@ def wishlist(request, user):
 
         wish = Listing.objects.get(title = listing_title)
 
-        wish.users.add(user)
+        wisher = User.objects.get(username = user)
+
+        wish.users.add(wisher)
 
      #   serializer = ListingSerializer(wish)
 
@@ -158,7 +160,7 @@ def wishlist(request, user):
 
 
     return render(request, "auctions/wishlist.html", {
-        "wishlist": user.wishlist.all()
+        "wishlist": wisher.wishlist.all()
     })
 
 
