@@ -145,7 +145,7 @@ def wishlist(request, user):
 
         wish = Listing.objects.get(title = listing_title)
 
-        username = 
+        wish.wishlist.add(wish)
 
      #   serializer = ListingSerializer(wish)
 
