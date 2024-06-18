@@ -21,6 +21,7 @@ class Comment(models.Model):
 
     poster = models.CharField(max_length=64, default="Anonymous")
     comment = models.CharField(max_length=128)
+    listing = models.CharField(max_length=64)
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
@@ -31,6 +32,7 @@ class Bid(models.Model):
 
     owner = models.CharField(max_length=64, default="Anonymous")
     offer = models.IntegerField()
+    listing = models.CharField(max_length=64)
     bids = models.ManyToManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):
