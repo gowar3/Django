@@ -133,26 +133,26 @@ def listing(request, listing):
 
 def wishlist(request, user):
 
-    if "wishlist" not in request.session:
+#    if "wishlist" not in request.session:
 
-        request.session["wishlist"] = []
-
-
-
-    if request.method == "POST":
-
-        listing_title = request.POST["listing_title"]
-
-        wish = Listing.objects.get(title = listing_title)
-
-        serializer = ListingSerializer(wish)
-
-        serialized_data = serializer.data
-
-        request.session["wishlist"] += [serialized_data]
+ #       request.session["wishlist"] = []
 
 
-        return HttpResponseRedirect(reverse("wishlist", args=[user]))
+
+  #  if request.method == "POST":
+
+   #     listing_title = request.POST["listing_title"]
+
+    #    wish = Listing.objects.get(title = listing_title)
+
+     #   serializer = ListingSerializer(wish)
+
+      #  serialized_data = serializer.data
+
+       # request.session["wishlist"] += [serialized_data]
+
+
+       # return HttpResponseRedirect(reverse("wishlist", args=[user]))
 
 
     return render(request, "auctions/wishlist.html", {
