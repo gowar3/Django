@@ -8,10 +8,10 @@ class ListingAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "description", "price")
 
 class BidAdmin(admin.ModelAdmin):
-    list_display = ("owner", "offer")
+    list_display = ("owner", "listing", "offer")
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ("poster", "comment")
+    list_display = ("poster", "listing", "comment")
 
 
 admin.site.register(Listing, ListingAdmin)
