@@ -71,11 +71,12 @@ def new(request):
 
     if request.method == "POST":
 
+        creator = request.POST["username"]
         title = request.POST["title"]
         description = request.POST["description"]
         price = request.POST["price"]
 
-        listing = Listing.objects.create(title=title, description=description, price=price)
+        listing = Listing.objects.create(creator=creator, title=title, description=description, price=price)
 
         return HttpResponseRedirect(reverse("index"))
 
