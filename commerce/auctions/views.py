@@ -137,6 +137,7 @@ def wishlist(request, user):
 
  #       request.session["wishlist"] = []
 
+    wisher = User.objects.get(username = user)
 
 
     if request.method == "POST":
@@ -144,8 +145,6 @@ def wishlist(request, user):
         listing_title = request.POST["listing_title"]
 
         wish = Listing.objects.get(title = listing_title)
-
-        wisher = User.objects.get(username = user)
 
         wish.users.add(wisher)
 
