@@ -158,7 +158,7 @@ def wishlist(request, user):
 
 
     return render(request, "auctions/wishlist.html", {
-        "wishlist": wish.objects.all()
+        "wishlist": user.wishlist.all()
     })
 
 
