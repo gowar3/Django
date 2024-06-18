@@ -139,7 +139,7 @@ def wishlist(request, user):
 
 
 
-  #  if request.method == "POST":
+    if request.method == "POST":
 
    #     listing_title = request.POST["listing_title"]
 
