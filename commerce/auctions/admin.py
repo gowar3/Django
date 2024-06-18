@@ -5,7 +5,7 @@ from .models import Listing, Bid, Comment
 # Register your models here.
 
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "description", "price")
+    list_display = ("creator", "title", "description", "price")
 
 class BidAdmin(admin.ModelAdmin):
     list_display = ("owner", "listing", "offer")
