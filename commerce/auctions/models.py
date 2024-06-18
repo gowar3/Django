@@ -8,7 +8,7 @@ class User(AbstractUser):
 
 class Listing(models.Model):
 
-    creator = models.CharField(max_length=64, default="")
+    creator = models.CharField(max_length=64)
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
@@ -22,7 +22,7 @@ class Comment(models.Model):
 
     poster = models.CharField(max_length=64)
     comment = models.CharField(max_length=128)
-    listing = models.CharField(max_length=64, default="")
+    listing = models.CharField(max_length=64)
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
@@ -33,7 +33,7 @@ class Bid(models.Model):
 
     owner = models.CharField(max_length=64)
     offer = models.IntegerField()
-    listing = models.CharField(max_length=64, default="")
+    listing = models.CharField(max_length=64)
     bids = models.ManyToManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):

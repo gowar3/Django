@@ -109,7 +109,7 @@ def listing(request, listing):
         if comment != "":
 
 
-            new_comment = Comment.objects.create(poster=username, comment=comment, listing=listing)
+            new_comment = Comment.objects.create(poster=username, comment=comment, listing=listing.title)
 
             new_comment.listings.add(listing)
 
@@ -117,7 +117,7 @@ def listing(request, listing):
         if bid != "":
 
 
-            new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
+            new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing.title)
 
             new_bid.bids.add(listing)
 
