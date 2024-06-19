@@ -71,7 +71,7 @@ def new(request):
 
     if request.method == "POST":
 
-        creator = request.POST["username"]
+        creator = request.user.username
         title = request.POST["title"]
         description = request.POST["description"]
         price = request.POST["price"]
