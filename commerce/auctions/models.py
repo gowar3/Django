@@ -23,7 +23,7 @@ class Comment(models.Model):
 
     poster = models.CharField(max_length=64)
     comment = models.CharField(max_length=128)
-    listing = models.CharField(max_length=64)
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listing")
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
