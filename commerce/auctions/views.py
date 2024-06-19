@@ -96,6 +96,7 @@ def listing(request, listing):
         request.session["bids"] = ()
 
     listing = Listing.objects.get(title = listing)
+    username = request.session["user.username"]
 
     if request.method == "POST":
 
