@@ -34,7 +34,7 @@ class Bid(models.Model):
 
     owner = models.CharField(max_length=64)
     offer = models.IntegerField()
-    listing = models.CharField(max_length=64)
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="listing")
     bids = models.ManyToManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):
