@@ -164,3 +164,4 @@ def wishlist(request, user):
     })
 
 
+##implement the filter to allow bids higher than the cost
