@@ -23,7 +23,7 @@ class Comment(models.Model):
 
     poster = models.CharField(max_length=64)
     comment = models.CharField(max_length=128)
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="comments")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="comment_listing")
     listings = models.ManyToManyField(Listing, blank=True, related_name= "comments")
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Bid(models.Model):
 
     owner = models.CharField(max_length=64)
     offer = models.IntegerField()
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="bids")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="bid_listing")
     bids = models.ManyToManyField(Listing, blank=True, related_name= "bids")
 
     def __str__(self):
