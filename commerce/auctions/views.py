@@ -96,11 +96,11 @@ def listing(request, listing):
         request.session["bids"] = ()
 
     listing = Listing.objects.get(title = listing)
-    username = request.session["user.username"]
+    username = request.user.username
 
     if request.method == "POST":
 
-        username = request.POST["username"]
+        ##username = request.POST["username"]
 
         comment = request.POST.get("comment", "")
 
