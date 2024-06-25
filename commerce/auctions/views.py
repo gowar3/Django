@@ -94,6 +94,7 @@ def listing(request, listing):
     if "bids" not in request.session:
 
         request.session["bids"] = ()
+
     error = ""
     listing = Listing.objects.get(title = listing)
     username = request.user.username
