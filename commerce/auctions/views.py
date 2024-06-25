@@ -98,7 +98,7 @@ def listing(request, listing):
     error = ""
     listing = Listing.objects.get(title = listing)
     username = request.user.username
-    highest_bid = Listing.bids.aggregate(max_offer=Max("offer"))
+    highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
 
     if request.method == "POST":
 
