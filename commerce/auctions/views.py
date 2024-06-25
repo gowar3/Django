@@ -115,7 +115,7 @@ def listing(request, listing):
             new_comment.listings.add(listing)
 
 
-        if bid != "" and bid > listing.price:
+        if bid != "" and int(bid) > listing.price:
 
 
             new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
