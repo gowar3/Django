@@ -99,6 +99,7 @@ def listing(request, listing):
     listing = Listing.objects.get(title = listing)
     username = request.user.username
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
+    highest_bid_value = highest_bid.get("max_offer", None)
 
     if request.method == "POST":
 
@@ -117,7 +118,7 @@ def listing(request, listing):
             new_comment.listings.add(listing)
 
 
-        if bid != "" and int(bid) > listing.price:
+        if bid != "" and int(bid) > listing.price and int(bid) > highest_bid_value:
 
 
             new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
