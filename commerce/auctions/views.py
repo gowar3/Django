@@ -115,14 +115,19 @@ def listing(request, listing):
             new_comment.listings.add(listing)
 
 
-        if bid != "":
+        if bid != "" and bid > listing.price:
 
 
             new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
 
             new_bid.bids.add(listing)
 
+        else:
+
+            error = "Invalid bid. Must be higher than the cost"
+
     return render(request, "auctions/listing.html", {
+        "
         "listing": listing,
         "comments": listing.comments.all(),
         "bids": listing.bids.all()

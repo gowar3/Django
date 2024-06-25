@@ -34,6 +34,9 @@
         <input type="submit" value= "Add bid">
     </form>
 
+    {% if error %}
+        <div>{{ error }}</div>
+    {% endif %}
     <br>
 
     <form action= "{% url 'listing' listing.title %}" method = "post">
