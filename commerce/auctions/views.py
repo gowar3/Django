@@ -94,7 +94,7 @@ def listing(request, listing):
     if "bids" not in request.session:
 
         request.session["bids"] = ()
-
+    error = ""
     listing = Listing.objects.get(title = listing)
     username = request.user.username
 
@@ -127,7 +127,7 @@ def listing(request, listing):
             error = "Invalid bid. Must be higher than the cost"
 
     return render(request, "auctions/listing.html", {
-        "
+        "error": error,
         "listing": listing,
         "comments": listing.comments.all(),
         "bids": listing.bids.all()
