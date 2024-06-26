@@ -161,7 +161,11 @@ def wishlist(request, user):
 
         if "delete" in request.GET:
 
-            listing_delete = Listing.objects.get()
+            listing_delete = request.GET["delete"]
+
+            title_delete = Listing.objects.get(title=listing_delete)
+
+            wisher.users.remove()
 
 
 
