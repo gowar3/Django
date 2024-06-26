@@ -159,6 +159,8 @@ def wishlist(request, user):
 
         wish.users.add(wisher)
 
+        
+
 
 
     return render(request, "auctions/wishlist.html", {
