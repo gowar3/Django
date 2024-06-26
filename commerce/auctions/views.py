@@ -125,7 +125,7 @@ def listing(request, listing):
             highest_bid_value = 0
 
 
-        if bid and int(bid) > listing.price and int(bid) > highest_bid_value:
+        if bid != "" and int(bid) > listing.price and int(bid) > highest_bid_value:
 
             new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
 
