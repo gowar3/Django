@@ -17,7 +17,7 @@
     <form action= "{% url 'wishlist' user.username %}" method = "post">
         {% csrf_token %}
 
-        <input type="hidden" name= "listing_title" value= "{{ listing.title }}">
+        <input type="hidden" name= "listing_title" value= "{{ listing.id }}">
         <input type= "submit" value= "Add to Wishlist">
     </form>
 
