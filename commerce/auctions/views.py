@@ -97,7 +97,7 @@ def listing(request, listing):
         request.session["bids"] = ()
 
     error = ""
-    listing = Listing.objects.get(title = listing)
+    listing = Listing.objects.get(pk = listing)
     username = request.user.username
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
     highest_bid_value = highest_bid.get("max_offer", None)
