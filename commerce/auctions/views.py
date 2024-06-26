@@ -165,7 +165,7 @@ def wishlist(request, user):
 
         title_delete = Listing.objects.get(title=listing_delete)
 
-        wish.users.remove(title_delete)
+        title_delete.users.remove(wisher)
 
 
 
