@@ -159,7 +159,9 @@ def wishlist(request, user):
 
         wish.users.add(wisher)
 
-        
+        if "delete" in request.GET:
+
+            listing_delete = Lis
 
 
 
