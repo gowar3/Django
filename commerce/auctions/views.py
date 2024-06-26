@@ -111,10 +111,6 @@ def listing(request, listing):
 
         bid = request.POST.get("bid", "")
 
-        if highest_bid_value is None:
-
-            highest_bid_value = 0
-
 
         if comment != "":
 
@@ -124,7 +120,12 @@ def listing(request, listing):
             new_comment.listings.add(listing)
 
 
-        if bid != "" and int(bid) > listing.price and int(bid) > highest_bid_value:
+        if highest_bid_value is None:
+
+            highest_bid_value = 0
+
+
+        if bid and int(bid) > listing.price and int(bid) > highest_bid_value:
 
             new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
 
