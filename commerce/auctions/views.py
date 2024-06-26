@@ -147,9 +147,6 @@ def listing(request, listing):
 
 def wishlist(request, user):
 
-#    if "wishlist" not in request.session:
-
- #       request.session["wishlist"] = []
 
     wisher = User.objects.get(username = user)
 
@@ -162,14 +159,6 @@ def wishlist(request, user):
 
         wish.users.add(wisher)
 
-     #   serializer = ListingSerializer(wish)
-
-      #  serialized_data = serializer.data
-
-       # request.session["wishlist"] += [serialized_data]
-
-
-       # return HttpResponseRedirect(reverse("wishlist", args=[user]))
 
 
     return render(request, "auctions/wishlist.html", {
