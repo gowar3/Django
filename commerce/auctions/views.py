@@ -151,7 +151,7 @@ def wishlist(request, user):
     wisher = User.objects.get(username = user)
 
 
-    if request.method == "POST" and "listing_title:
+    if request.method == "POST" and "listing_title" in request.POST:
 
         listing_title = request.POST["listing_title"]
 
@@ -159,13 +159,13 @@ def wishlist(request, user):
 
         wish.users.add(wisher)
 
-        if "delete" in request.GET:
+    if "delete" in request.GET:
 
-            listing_delete = request.GET["delete"]
+        listing_delete = request.GET["delete"]
 
-            title_delete = Listing.objects.get(title=listing_delete)
+        title_delete = Listing.objects.get(title=listing_delete)
 
-            wisher.users.remove(title_delete)
+        wish.users.remove(title_delete)
 
 
 
