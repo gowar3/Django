@@ -125,15 +125,17 @@ def listing(request, listing):
             highest_bid_value = 0
 
 
-        if bid != "" and int(bid) > listing.price and int(bid) > highest_bid_value:
+        if bid != "":
 
-            new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
+            if int(bid) > listing.price and int(bid) > highest_bid_value:
 
-            new_bid.bids.add(listing)
+                new_bid = Bid.objects.create(owner=username, offer=bid, listing=listing)
 
-        else:
+                new_bid.bids.add(listing)
 
-            error = "Invalid bid. Must be higher than the cost"
+            else:
+
+                error = "Invalid bid. Must be higher than the cost"
 
     return render(request, "auctions/listing.html", {
         "error": error,
