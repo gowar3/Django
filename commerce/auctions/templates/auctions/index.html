@@ -5,7 +5,7 @@
 
     <ol>
         {% for listing in listings %}
-            <a href="{% url 'listing' listing.title %}"><li>{{ listing }}</li></a>
+            <a href="{% url 'listing' listing.id %}"><li>{{ listing }}</li></a>
         {% endfor %}
     </ol>
 
