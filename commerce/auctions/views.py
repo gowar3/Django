@@ -151,7 +151,7 @@ def wishlist(request, user):
     wisher = User.objects.get(username = user)
 
 
-    if request.method == "POST":
+    if request.method == "POST" and "listing_title:
 
         listing_title = request.POST["listing_title"]
 
