@@ -6,10 +6,10 @@
 
     <ol>
     {% for wish in wishlist %}
-        <a href="{% url 'listing' wish.title %}"><li>{{ wish.title }}: ${{ wish.price }}</li></a>
+        <a href="{% url 'listing' wish.id %}"><li>{{ wish.title }}: ${{ wish.price }}</li></a>
         <form action="{% url 'wishlist' user.username %}" method="post">
             {% csrf_token %}
-            <input type="hidden" name="delete" value="{{ wish.title }}">
+            <input type="hidden" name="delete" value="{{ wish.id }}">
             <input type="submit" value="Delete from Wishlist">
         </form>
     {% endfor %}
