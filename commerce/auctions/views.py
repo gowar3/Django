@@ -161,7 +161,7 @@ def wishlist(request, user):
 
         if "delete" in request.GET:
 
-            listing_delete = Lis
+            listing_delete = Listing.objects.get()
 
 
 
