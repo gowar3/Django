@@ -23,7 +23,7 @@
 
     <br>
 
-    <form action= "{% url 'listing' listing.title %}" method = "post">
+    <form action= "{% url 'listing' listing.id %}" method = "post">
         {% csrf_token %}
 
         <label for="add_bid">Add Bid</label>
@@ -39,7 +39,7 @@
     {% endif %}
     <br>
 
-    <form action= "{% url 'listing' listing.title %}" method = "post">
+    <form action= "{% url 'listing' listing.id %}" method = "post">
         {% csrf_token %}
 
         <label for="add_comment">Add comment</label>
