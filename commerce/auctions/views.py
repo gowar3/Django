@@ -159,9 +159,9 @@ def wishlist(request, user):
 
         wish.users.add(wisher)
 
-    if "delete" in request.GET:
+    if "delete" in request.POST:
 
-        listing_delete = request.GET["delete"]
+        listing_delete = request.POST["delete"]
 
         title_delete = Listing.objects.get(title=listing_delete)
 
