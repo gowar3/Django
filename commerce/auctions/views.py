@@ -145,7 +145,8 @@ def listing(request, listing):
         "error": error,
         "listing": listing,
         "comments": listing.comments.all(),
-        "bids": listing.bids.all()
+        "bids": listing.bids.all(),
+        "closed": closed,
     })
 
 
