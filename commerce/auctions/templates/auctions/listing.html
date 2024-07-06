@@ -22,7 +22,11 @@
     </form>
 
     <br>
-    {% if not close %}
+    {% if close %}
+    
+        {{ close }}
+
+    {% else %}
     <form action= "{% url 'listing' listing.id %}" method = "post">
         {% csrf_token %}
 
