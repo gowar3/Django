@@ -22,7 +22,7 @@
     </form>
 
     <br>
-
+    {% if not close %}
     <form action= "{% url 'listing' listing.id %}" method = "post">
         {% csrf_token %}
 
@@ -33,6 +33,7 @@
         <br>
         <input type="submit" value= "Add bid">
     </form>
+    {% endif %}
 
     {% if error %}
         <div>{{ error }}</div>
@@ -40,6 +41,7 @@
     <br>
     {% if user.username == listing.creator %}
         <form action= "{% url 'listing' listing.id %}">
+            {% csrf_token %}
             <input type="hidden" name="close" value= "{{ listing.id }}">
             <input type="submit" value="Close listing">
         </form>
