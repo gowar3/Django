@@ -40,6 +40,7 @@
     <br>
     {% if user.username == listing.creator %}
         <form action= "{% url 'listing' listing.id %}">
+            <input type="hidden" name="close" value= "{{ listing.id }}">
             <input type="submit" value="Close listing">
         </form>
     {% endif %}
