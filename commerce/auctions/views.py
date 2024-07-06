@@ -137,6 +137,10 @@ def listing(request, listing):
 
                 error = "Invalid bid. Must be higher than the cost"
 
+        if "close" in request.POST:
+
+            closed = "Listing is closed"
+
     return render(request, "auctions/listing.html", {
         "error": error,
         "listing": listing,
@@ -182,6 +186,6 @@ def close(request, listing):
     list = request.POST["closing_title"]
     closing = Listing.objects.get(pk = listing)
 
-    
+
 
 ##implement the filter to allow bids higher than the cost
