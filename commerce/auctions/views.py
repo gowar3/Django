@@ -191,3 +191,5 @@ def close(request, listing):
 
 
 ##check how to show the name of the listing instead of the ID in the URL
+
+##check how to save closed status
