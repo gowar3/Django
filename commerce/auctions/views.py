@@ -138,7 +138,7 @@ def listing(request, listing):
 
                 error = "Invalid bid. Must be higher than the cost"
 
-        if "close" in request.POST:
+        if "closing" in request.POST:
 
             closed = "Listing is closed"
 
