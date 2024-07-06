@@ -39,8 +39,8 @@
     {% endif %}
     <br>
     {% if user.username == listing.creator%}
-        <div>
-            
+        <form action= "{% url 'index' }>
+            <input type="submit" value="Close listing">
         </div>
 
     <form action= "{% url 'listing' listing.id %}" method = "post">
