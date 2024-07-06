@@ -190,4 +190,4 @@ def close(request, listing):
 
 
 
-##implement the filter to allow bids higher than the cost
+##check how to show the name of the listing instead of the ID in the URL
