@@ -38,7 +38,7 @@
         <div>{{ error }}</div>
     {% endif %}
     <br>
-    {% if user.username == listing.creator%}
+    {% if user.username == listing.creator %}
         <form action= "{% url 'index' %}">
             <input type="submit" value="Close listing">
         </form>
