@@ -179,6 +179,9 @@ def wishlist(request, user):
 
 def close(request, listing):
 
-    list = Listing.objects.get(pk = listing)
+    list = request.POST["closing_title"]
+    closing = Listing.objects.get(pk = listing)
+
+    
 
 ##implement the filter to allow bids higher than the cost
