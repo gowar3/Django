@@ -44,7 +44,7 @@
     {% endif %}
     <br>
     {% if user.username == listing.creator %}
-        <form action= "{% url 'listing' listing.id %}">
+        <form action= "{% url 'listing' listing.id %}" method = "post">
             {% csrf_token %}
             <input type="hidden" name="closing" value= "{{ listing.id }}">
             <input type="submit" value="Close listing">
