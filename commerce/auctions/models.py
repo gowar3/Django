@@ -12,7 +12,7 @@ class Listing(models.Model):
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     price = models.IntegerField()
-    winner = models.CharField(max_length=64, default="")
+    winner = models.CharField(max_length=64, default="None")
     status = models.CharField(max_length=64, default="active")
     users = models.ManyToManyField(User, blank=True, related_name= "wishlist")
 
