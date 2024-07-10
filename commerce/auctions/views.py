@@ -98,6 +98,7 @@ def listing(request, listing):
 
     error = ""
     closed = ""
+    winner = ""
     listing = Listing.objects.get(pk = listing)
     username = request.user.username
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
@@ -154,6 +155,7 @@ def listing(request, listing):
         "comments": listing.comments.all(),
         "bids": listing.bids.all(),
         "close": closed,
+        "winner": listing.winner
     })
 
 
