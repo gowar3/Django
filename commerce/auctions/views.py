@@ -113,6 +113,10 @@ def listing(request, listing):
 
         bid = request.POST.get("bid", "")
 
+        if listing.status == "closed":
+
+            closed = "Listing is closed"
+
 
         if comment != "":
 
@@ -146,8 +150,6 @@ def listing(request, listing):
             listing.status = "closed"
             listing.winner = highest_bid_object.owner
             listing.save()
-
-            closed = "Listing is closed"
 
     return render(request, "auctions/listing.html", {
         "error": error,
