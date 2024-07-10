@@ -183,12 +183,6 @@ def wishlist(request, user):
     })
 
 
-def close(request, listing):
-
-    list = request.POST["closing_title"]
-    closing = Listing.objects.get(pk = listing)
-
-
 
 ##check how to show the name of the listing instead of the ID in the URL
 
