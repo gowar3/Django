@@ -22,11 +22,18 @@
     </form>
 
     <br>
+    {% if winner == user.username %}
+
+        <h1>You won!</h1>
+
+    {% endif %}
+    <br>
     {% if close %}
 
         {{ close }}
 
     {% else %}
+
     <form action= "{% url 'listing' listing.id %}" method = "post">
         {% csrf_token %}
 
