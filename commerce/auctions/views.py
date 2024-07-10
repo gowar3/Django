@@ -141,6 +141,7 @@ def listing(request, listing):
         if "closing" in request.POST:
 
             listing.status = "closed"
+            winner_user = highest
             listing.winner = highest_bid.owner
             listing.save()
 
