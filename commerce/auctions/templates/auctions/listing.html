@@ -22,15 +22,15 @@
     </form>
 
     <br>
-    {% if winner == user.username %}
-
-        <h1>You won!</h1>
-
-    {% endif %}
-    <br>
     {% if listing.status == "closed" %}
 
         {{ close }}
+
+        {% if winner == user.username %}
+
+            <h1>You won!</h1>
+
+        {% endif %}
 
     {% else %}
 
