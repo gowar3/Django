@@ -140,10 +140,10 @@ def listing(request, listing):
 
         if "closing" in request.POST:
 
-            highest_bid_object=
+            highest_bid_object = Bid.objects.get(offer = highest_bid_value)
 
             listing.status = "closed"
-            listing.winner = highest_bid.owner
+            listing.winner = highest_bid_object.owner
             listing.save()
 
             closed = "Listing is closed"
