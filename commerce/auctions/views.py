@@ -140,6 +140,7 @@ def listing(request, listing):
 
         if "closing" in request.POST:
 
+            Listing.objects
             closed = "Listing is closed"
 
     return render(request, "auctions/listing.html", {
