@@ -107,7 +107,6 @@ def listing(request, listing):
 
     if request.method == "POST":
 
-        ##username = request.POST["username"]
 
         comment = request.POST.get("comment", "")
 
