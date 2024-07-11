@@ -214,7 +214,7 @@ def category(request, type):
     })
 
 
+##check how to print the categories in category page
 
 ##check how to show the name of the listing instead of the ID in the URL
 
-##check how to save closed status
