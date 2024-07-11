@@ -79,7 +79,7 @@ def new(request):
 
         listing = Listing.objects.create(creator=creator, title=title, description=description, price=price)
 
-        names = request.POST["categories"]
+        names = request.POST["categories", ""]
         categories_names = [category.strip() for category in names.split(",")]
 
 
