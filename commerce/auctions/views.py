@@ -84,6 +84,10 @@ def new(request):
 
         categories = []
 
+        for category in categories_names:
+
+            Category.objects.create()
+
 
         return HttpResponseRedirect(reverse("index"))
 
