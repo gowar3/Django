@@ -7,7 +7,7 @@
     <ol>
     {% for listing in category %}
 
-        <a href="{% url 'listing.html' listing %}"><li>{{ listing }}</li></a>
+        <a href="{% url 'listing' listing.id %}"><li>{{ listing }}</li></a>
     {% endfor %}
     </ol>
 
