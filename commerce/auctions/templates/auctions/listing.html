@@ -9,7 +9,9 @@
 
         <label>{{ listing.price }}</label>
 
-        <label>{{ listing.categories }}</label>
+        {% for category in categories %}
+        <label><a href="{% url 'category' category %}">{{ category }}</label>
+        {% endfor %}
 
         <br>
         <br>
