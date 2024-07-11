@@ -14,7 +14,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ("poster", "listing", "comment")
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("name")
+    list_display = ("name", "listing")
 
 
 admin.site.register(Listing, ListingAdmin)
