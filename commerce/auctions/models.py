@@ -8,6 +8,7 @@ class User(AbstractUser):
 class Category(models.Model):
 
     name = models.CharField(max_length=64)
+    listing = models.ForeignKey()
 
     def __str__(self):
 
