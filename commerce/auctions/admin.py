@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Listing, Bid, Comment
+from .models import Listing, Bid, Comment, Category
 
 # Register your models here.
 
@@ -12,9 +12,12 @@ class BidAdmin(admin.ModelAdmin):
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ("poster", "listing", "comment")
-class CommentAdmin("name, )
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ("name")
 
 
 admin.site.register(Listing, ListingAdmin)
 admin.site.register(Bid, BidAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Category, CategoryAdmin)
