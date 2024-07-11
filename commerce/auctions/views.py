@@ -104,6 +104,10 @@ def listing(request, listing):
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
     highest_bid_value = highest_bid.get("max_offer", None)
 
+    if listing.status == "closed":
+
+        closed = "Listing is closed"
+
 
     if request.method == "POST":
 
@@ -111,10 +115,6 @@ def listing(request, listing):
         comment = request.POST.get("comment", "")
 
         bid = request.POST.get("bid", "")
-
-        if listing.status == "closed":
-
-            closed = "Listing is closed"
 
 
         if comment != "":
