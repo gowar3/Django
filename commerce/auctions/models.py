@@ -44,3 +44,11 @@ class Bid(models.Model):
     def __str__(self):
 
         return f"{self.owner}: {self.offer}"
+
+class Category(models.Model):
+
+    name = models.CharField(max_length=64)
+
+    def __str__(self):
+
+        return f"{self.name}"
