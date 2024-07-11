@@ -12,6 +12,7 @@ class BidAdmin(admin.ModelAdmin):
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ("poster", "listing", "comment")
+class CommentAdmin("name, )
 
 
 admin.site.register(Listing, ListingAdmin)
