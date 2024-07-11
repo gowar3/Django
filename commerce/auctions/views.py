@@ -191,8 +191,9 @@ def wishlist(request, user):
         "wishlist": wisher.wishlist.all()
     })
 
-def category(request);
-    return 
+def category(request, type);
+
+    category = Listing.objects.all(category=type)
 
 
 
