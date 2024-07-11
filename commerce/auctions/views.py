@@ -209,9 +209,7 @@ def category(request, type):
 
     categories = type.listings.all()
 
-    return render(request, "auctions/category.html", {
-        "category": categories
-    })
+    return render(request, "auctions/category.html")
 
 
 ##check how to print the categories in category page
