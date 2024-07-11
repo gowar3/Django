@@ -47,7 +47,7 @@ class Bid(models.Model):
 class Category(models.Model):
 
     name = models.CharField(max_length=64)
-    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="category_listing")
+    listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="category_listing", default="")
     categories = models.ManyToManyField(Listing, blank=True, related_name= "categories")
 
     def __str__(self):
