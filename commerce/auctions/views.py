@@ -67,7 +67,34 @@ def register(request):
         return render(request, "auctions/register.html")
 
 
-c
+def new(request):
+
+
+    if request.method == "POST":
+
+        creator = request.user.username
+        title = request.POST["title"]
+        description = request.POST["description"]
+        price = request.POST["price"]
+
+        listing = Listing.objects.create(creator=creator, title=title, description=description, price=price)
+
+        names = request.POST["categories"]
+        categories_names = [category.strip() for category in names.split(",")]
+
+
+        for category in categories_names:
+
+            new_category = Category.objects.create(name=category)
+
+            new_category.categories.add(listing)
+
+
+        return HttpResponseRedirect(reverse("index"))
+
+    else:
+
+        return render(request, "auctions/new.html")
 
 
 def listing(request, listing):
