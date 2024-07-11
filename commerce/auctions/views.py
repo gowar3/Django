@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.db.models import Max
 
-from .models import User, Listing, Comment, Bid
+from .models import User, Listing, Comment, Bid, Category
 from .serializers import ListingSerializer  # Assuming your serializer is in a file named serializers.py
 
 
@@ -86,7 +86,7 @@ def new(request):
 
         for category in categories_names:
 
-            Category.objects.create()
+            Category.objects.create(name=category)
 
 
         return HttpResponseRedirect(reverse("index"))
