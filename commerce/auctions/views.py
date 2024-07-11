@@ -191,6 +191,9 @@ def wishlist(request, user):
         "wishlist": wisher.wishlist.all()
     })
 
+def category(request);
+    return 
+
 
 
 ##check how to show the name of the listing instead of the ID in the URL
