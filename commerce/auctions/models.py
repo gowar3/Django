@@ -15,6 +15,7 @@ class Listing(models.Model):
     winner = models.CharField(max_length=64, default="None")
     status = models.CharField(max_length=64, default="active")
     users = models.ManyToManyField(User, blank=True, related_name= "wishlist")
+    
 
     def __str__(self):
 
