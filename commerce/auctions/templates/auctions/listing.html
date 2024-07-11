@@ -10,7 +10,7 @@
         <label>{{ listing.price }}</label>
 
         {% for category in categories %}
-        <label><a href="{% url 'category' category %}">{{ category }}</label>
+        <label><a href="{% url 'category' category %}">{{ category }}</a></label>
         {% endfor %}
 
         <br>
