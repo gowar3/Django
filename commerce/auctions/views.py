@@ -82,6 +82,8 @@ def new(request):
         names = request.POST["categories"]
         categories_names = [category.strip() for category in names.split(",")]
 
+        categories = []
+
 
         return HttpResponseRedirect(reverse("index"))
 
