@@ -115,7 +115,7 @@ def listing(request, listing):
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
     highest_bid_value = highest_bid.get("max_offer", None)
 
-    categories = Category.listing.get(listing= listing)
+    categories = listing.categories.all()
 
     if listing.status == "closed":
 
@@ -169,7 +169,8 @@ def listing(request, listing):
         "comments": listing.comments.all(),
         "bids": listing.bids.all(),
         "close": closed,
-        "winner": listing.winner
+        "winner": listing.winner,
+        "categories": categories
     })
 
 
