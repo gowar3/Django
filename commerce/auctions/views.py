@@ -209,12 +209,10 @@ def category(request, category):
 
     if request.method == "POST":
 
-        type = Category.objects.filter(name = category)
-
-        listings = category.category_listing.all()
+        listings = category.categories.all()
 
         return render(request, "auctions/category.html", {
-            "category": type
+            "category": listings
         })
 
 
