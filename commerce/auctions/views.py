@@ -209,7 +209,7 @@ def category(request, category):
 
 
     type = Category.objects.get(pk=category)
-    listings = type.categories.all()
+    listings = type.listing_set.all()
 
     return render(request, "auctions/category.html", {
         "category": category,
