@@ -210,7 +210,7 @@ def category(request, category):
     if request.method == "POST":
 
         type = Category.objects.get(name=category)
-        listings = type.listing_set.all()
+        listings = type.categories.all()
 
         return render(request, "auctions/category.html", {
             "category": category,
