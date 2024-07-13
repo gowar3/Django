@@ -207,11 +207,14 @@ def wishlist(request, user):
 
 def category(request, type):
 
-    listings = type.listing.all()
+    if request.method == "POST":
 
-    return render(request, "auctions/category.html", {
-        "cateogory": listings
-    })
+
+        listings = type.listing.all()
+
+        return render(request, "auctions/category.html", {
+            "category": listings
+        })
 
 
 ##check how to print the categories in category page
