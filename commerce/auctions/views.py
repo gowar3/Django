@@ -212,7 +212,8 @@ def category(request, category):
         listings = category.listing_set.all()
 
         return render(request, "auctions/category.html", {
-            "category": listings
+            "category": category,
+            "list": listings
         })
 
 

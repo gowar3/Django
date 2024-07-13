@@ -2,10 +2,10 @@
 
 {% block body %}
 
-    <h1>Category listings</h1>
+    <h1>{{ category }}</h1>
 
     <ol>
-    {% for listing in category %}
+    {% for listing in list %}
 
         <a href="{% url 'listing' listing.id %}"><li>{{ listing }}</li></a>
     {% endfor %}
