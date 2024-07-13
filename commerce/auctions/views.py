@@ -205,12 +205,12 @@ def wishlist(request, user):
         "wishlist": wisher.wishlist.all()
     })
 
-def category(request, type):
+def category(request, category):
 
     if request.method == "POST":
 
 
-        listings = type.listing.all()
+        listings = category.listing.all()
 
         return render(request, "auctions/category.html", {
             "category": listings
