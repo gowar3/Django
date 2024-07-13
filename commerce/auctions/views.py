@@ -210,7 +210,7 @@ def category(request, category):
     if request.method == "POST":
 
 
-        listings = category.listing.all()
+        listings = category.category_listing.all()
 
         return render(request, "auctions/category.html", {
             "category": listings
