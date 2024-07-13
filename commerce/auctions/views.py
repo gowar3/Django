@@ -207,15 +207,14 @@ def wishlist(request, user):
 
 def category(request, category):
 
-    if request.method == "POST":
 
-        type = Category.objects.get(name=category)
-        listings = type.categories.all()
+    type = Category.objects.get(name=category)
+    listings = type.categories.all()
 
-        return render(request, "auctions/category.html", {
-            "category": category,
-            "list": listings
-        })
+    return render(request, "auctions/category.html", {
+        "category": category,
+        "list": listings
+    })
 
 
 ##check how to print the categories in category page
