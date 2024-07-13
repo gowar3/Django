@@ -208,7 +208,7 @@ def wishlist(request, user):
 def category(request, category):
 
 
-    type = Category.objects.get(name=category)
+    type = Category.objects.get(pk=category)
     listings = type.categories.all()
 
     return render(request, "auctions/category.html", {
