@@ -210,7 +210,7 @@ def wishlist(request, user):
 def category(request, category):
 
 
-    type = Category.objects.get(pk=category)
+    type = Category.objects.get(name=category)
     listings = Category.objects.filter(name=type.name)
 
 
