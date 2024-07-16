@@ -210,7 +210,7 @@ def category(request, category):
 
     type = Category.objects.get(pk=category)
     names = Category.objects.filter(name=type.name)
-    listings = names.categories.all()
+    listings = names.listing.all()
 
     return render(request, "auctions/category.html", {
         "category": category,
