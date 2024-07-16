@@ -209,12 +209,12 @@ def category(request, category):
 
 
     type = Category.objects.get(pk=category)
-    names = Category.objects.filter(name=type.name)
-    listings = names.listing.all()
+    listings = Category.objects.filter(name=type.name)
+
 
     return render(request, "auctions/category.html", {
         "category": category,
-        "list": names
+        "list": listings
     })
 
 ##try adding the category when created on the manytomany like comments and bids
