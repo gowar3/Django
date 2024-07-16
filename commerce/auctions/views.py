@@ -115,7 +115,9 @@ def listing(request, listing):
     highest_bid = listing.bids.aggregate(max_offer=Max("offer"))
     highest_bid_value = highest_bid.get("max_offer", None)
 
+
     categories = listing.categories.all()
+
 
     if listing.status == "closed":
 
