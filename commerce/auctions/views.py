@@ -215,7 +215,7 @@ def category(request, category):
 
     for cat in type:
 
-        listings = cat.listing_set.all()
+        listings = type.listing
         all_listings.extend(listings)
 
 
