@@ -216,7 +216,7 @@ def category(request, category):
 
     return render(request, "auctions/category.html", {
         "category": category,
-        "list": type
+        "list": type.listing
     })
 
 ##try adding the category when created on the manytomany like comments and bids
