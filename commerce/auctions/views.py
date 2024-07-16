@@ -87,7 +87,7 @@ def new(request):
 
             new_category = Category.objects.create(name=category, listing=listing)
 
-            new_category.categories.add(category)
+            new_category.categories.add(new_category)
 
 
         return HttpResponseRedirect(reverse("index"))
