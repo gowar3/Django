@@ -215,8 +215,8 @@ def category(request, category):
 
     for cat in type:
 
-        listings = type.listing
-        all_listings.extend(listings)
+        listings = cat.listing
+        all_listings.add(listings)
 
 
     return render(request, "auctions/category.html", {
