@@ -216,6 +216,7 @@ def category(request, category):
         "list": listings
     })
 
+##try adding the category when created on the manytomany like comments and bids
 
 ##check how to print the categories in category page
 
