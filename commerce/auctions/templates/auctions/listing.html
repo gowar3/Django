@@ -11,6 +11,8 @@
 
         <br>
 
+        <h3>Categories</h3>
+
         {% for category in categories %}
         <label><a href="{% url 'category' category.id %}">{{ category }}</a></label>
         {% endfor %}
