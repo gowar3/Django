@@ -215,6 +215,7 @@ def category(request, category):
 
     for cat in type:
 
+##access listing from each category object
         listings = cat.listing
         all_listings.append(listings)
 
@@ -224,9 +225,7 @@ def category(request, category):
         "list": all_listings
     })
 
-##try adding the category when created on the manytomany like comments and bids
 
-##check how to print the categories in category page
 
 ##check how to show the name of the listing instead of the ID in the URL
 
