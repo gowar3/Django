@@ -175,5 +175,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 
+  function check_email(emailId, emailRead){
+
+
+
+    fetch(`/emails/${emailId}`, {
+
+      method: 'PUT',
+
+      body: JSON.stringify({
+
+        read: !emailRead
+
+      })
+
+    })
+
+    .then(response => response.json())
+
+    .then(email => {
+
+        // Print email
+
+        console.log(email);
+
+
+
+        // ... do something else with email ...
+
+    })
+
+
+
+    .catch(error => {
+
+      console.error("Error getting email");
+
+    });
+
+  }
+
+
+
+  function archive_email(emailId, isArchived, currentMailbox){
+
+
+    fetch(`/emails/${emailId}`, {
+
+      method: 'PUT',
+
+      body: JSON.stringify({
+
+          archived: !isArchived
+
+      })
+
+    })
+
+    .then(() =>{
+
+      load_mailbox(currentMailbox);
+
+    });
+
+  }
+
 });
 
