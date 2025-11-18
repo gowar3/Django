@@ -148,11 +148,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         emailItem.innerHTML = `
 
-
+        <div class="email">
 
         <strong>From:</strong> ${email.sender}<br>
 
-        <strong>Subject:</strong> ${email.subject}
+        <strong>Subject:</strong> ${email.subject}<br>
+
+        </div>
+
+        <div class="button">
+
+          <input type="submit" class="archive" value="${email.archived ? "Unarchive" : "Archive"}">
+
+        </div>
 
         `;
 
