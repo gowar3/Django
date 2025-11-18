@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 
+    fetch(`/emails/${emailMessage}`)
     .then(response => response.json())
 
     .then(email => {
@@ -228,6 +229,54 @@ document.addEventListener('DOMContentLoaded', function() {
         // Print email
 
         console.log(email);
+
+      if (emailRead == false){
+
+
+
+        document.querySelector('#emails-view').style.display = 'none';
+
+        document.querySelector('#compose-view').style.display = 'none';
+
+        document.querySelector('#email-view').style.display = 'block';
+
+
+
+        const emailItem = document.createElement('li');
+
+        emailItem.innerHTML = `
+
+          <div class="email">
+
+            <strong>From:</strong> ${email.sender}<br>
+
+            <strong>Subject:</strong> ${email.subject}<br>
+
+            <strong>Recipients:</strong> ${email.recipients}</br>
+
+            <strong>Tiomestamp:</strong> ${email.timestamp}</br>
+
+            <strong>Body:</strong> ${email.body}
+
+          </div>`;
+
+
+
+        const emailView = document.querySelector('#email-view');
+
+        emailView.innerHTML = ""; // Clear any previous content
+
+        emailView.appendChild(emailItem);
+
+
+
+        emailItem.querySelector('.email').addEventListener('click', () => {
+
+          load_mailbox('inbox');
+
+        });
+
+      }
 
 
 
@@ -272,3 +321,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
+
+// pending check email
