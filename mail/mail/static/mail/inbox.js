@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     .catch(error => {
 
-      console.error("Error getting emails");
+      console.error("Error getting emails",error);
 
     });
 
