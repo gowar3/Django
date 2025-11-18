@@ -281,16 +281,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // ... do something else with email ...
 
-    })
+    });
 
 
 
-    .catch(error => {
+    /*.catch(error => {
 
       console.error("Error getting email");
 
     });
-
+  */
   }
 
 
