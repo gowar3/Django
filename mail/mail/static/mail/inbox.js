@@ -109,15 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let emailList = document.getElementById('email-list');
 
-    if (!emailList) {
+      if (!emailList) {
 
-      emailList = document.createElement('ul');
+        emailList = document.createElement('ul');
 
-      emailList.id = 'email-list';
+        emailList.id = 'email-list';
 
-      emailsView.appendChild(emailList);
+        emailsView.appendChild(emailList);
 
-    }
+      }
 
 
     fetch(`/emails/${mailbox}`)
