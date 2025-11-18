@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function check_email(emailMessage, emailRead){
 
 
-    fetch(`/emails/${emailId}`, {
+    fetch(`/emails/${emailMessage}`, {
 
       method: 'PUT',
 
