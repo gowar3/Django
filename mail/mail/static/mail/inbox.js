@@ -103,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#compose-view').style.display = 'none';
 
     // Show the mailbox name
-    document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
+    const emailsView = document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
 
-    
+
     let emailList = document.getElementById('email-list');
 
     if (!emailList) {
