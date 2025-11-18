@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       })
 
-    })
+    });
 
     fetch(`/emails/${emailMessage}`)
     .then(response => response.json())
