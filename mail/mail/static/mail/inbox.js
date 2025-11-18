@@ -106,6 +106,20 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
 
+    
+    let emailList = document.getElementById('email-list');
+
+    if (!emailList) {
+
+      emailList = document.createElement('ul');
+
+      emailList.id = 'email-list';
+
+      emailsView.appendChild(emailList);
+
+    }
+
+
     fetch(`/emails/${mailbox}`)
 
     .then(response => response.json())
