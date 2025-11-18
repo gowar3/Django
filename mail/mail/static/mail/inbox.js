@@ -164,6 +164,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         `;
 
+        emailItem.querySelector('.email').addEventListener('click', () => {
+
+        check_email(email.id, email.read, mailbox);
+
+        })
+
+
+
+        emailItem.querySelector('.archive').addEventListener('click', () =>{
+
+          archive_email(email.id, email.archived, mailbox);
+
+        })
+
+
+
+        if (email.read == true){
+
+          emailItem.querySelector('.email').style.backgroundColor = '#77dd11';
+
+        }
+
 
 
         emailList.appendChild(emailItem);
