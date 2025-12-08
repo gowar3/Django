@@ -323,4 +323,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// pending check email
+// pending check how to change colors after click on a read email
